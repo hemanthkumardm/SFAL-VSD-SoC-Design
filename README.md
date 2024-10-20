@@ -1,6 +1,26 @@
 # SFAL-VSD-SoC-Design Program Progress
 
 This repository documents my journey through the SFAL-VSD-SoC-Design program organized by NASSCOM. The program focuses on system-on-chip (SoC) design, providing hands-on experience and practical knowledge in various aspects of VLSI and SoC development.
+
+## overview of the Digital VLSI System-on-Chip (SoC) design and planning process
+
+1. **Chip Modeling**
+   - **Objective**: Achieve equivalence between the original specification model (O0) and the C model (O1).
+
+2. **RTL Architecture**
+   - **Objective**: Ensure equivalence between the specification model (O1) and the Register Transfer Level (RTL) representation (O2).
+
+3. **SoC Design Flow**
+   - **Objective**: Divide the chip design into processors and peripherals/IPs.
+
+4. **SoC Integration**
+   - **Objective**: Confirm equivalence across all stages (O1 == O2 == O3).
+
+5. **GDSII Creation**
+   - **Objective**: Prepare graphical data structure stream information for interchange.
+   - **Final Objective**: Ensure all models are equivalent (O1 == O2 == O3 == O4).
+
+
 ## Repository Structure
 
 	•	Day-wise Progress: Each folder contains a detailed breakdown of daily tasks, summaries of learning, tool installations, and code or design files.
