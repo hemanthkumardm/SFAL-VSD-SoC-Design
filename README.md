@@ -7,9 +7,17 @@ This repository documents my journey through the SFAL-VSD-SoC-Design program org
 	•	Tools and Setup: Step-by-step documentation of the tools required for the program, along with installation guides and configuration snapshots.
 
 ## Objectives
+
 	•	Learn the fundamentals of SoC design.
 	•	Gain hands-on experience with industry-standard tools and workflows.
 	•	Document daily progress to track growth and improvements.
 	•	Showcase projects and learning outcomes.
-
  
+## Learning Milestones
+
+## Daily Progress Overview
+
+| Day       | Task Description                                        | Status        |
+|-----------|---------------------------------------------------------|---------------|
+| [Day 1](Day1/)  | 1. Watched introductory video <br> 2. Created GitHub repo <br> 3. Documented summary in the repo | ✅ Completed   |
+
