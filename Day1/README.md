@@ -7,6 +7,8 @@ On Day 1, we focused on setting up the necessary tools for the SFAL-VSD-SoC-Desi
 
 <details>
 <summary>Yosys</summary>
+    Instructions 
+
 ```bash
 $ sudo apt-get update
 $ git clone https://github.com/YosysHQ/yosys.git
