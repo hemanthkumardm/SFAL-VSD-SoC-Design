@@ -24,7 +24,27 @@ $ git submodule update --init
 $ make
 $ yosys --version
 ```
-<img width="885" alt="Screenshot 2024-10-20 at 2 28 47 PM" src="https://github.com/user-attachments/assets/4d156b86-d67e-4521-a554-2058dde5387c">
+<img width="870" alt="Screenshot 2024-10-20 at 4 13 56 PM" src="https://github.com/user-attachments/assets/1d38c5b6-e74d-4e15-9380-0fdf94153099">
+
+<details>
+<summary>Iverilog</summary>
+    Instructions 
+
+```bash
+$ brew install icarus-verilog
+```
+<img width="1376" alt="Screenshot 2024-10-20 at 4 13 06 PM" src="https://github.com/user-attachments/assets/2c9e56af-bbc6-425c-b3db-317dc7d9b6a4">
+
+<details>
+<summary>GTKWave</summary>
+    Instructions 
+
+```bash
+$ brew install gtkwave
+```
+<img width="1386" alt="Screenshot 2024-10-20 at 4 16 47 PM" src="https://github.com/user-attachments/assets/552f76c7-920f-4930-98e7-5d804b43d3ee">
+
+
 
 
 
