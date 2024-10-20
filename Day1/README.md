@@ -50,4 +50,3 @@ $ brew install gtkwave
     </details>
 </li>
 </ul>
-```
