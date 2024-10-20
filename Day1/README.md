@@ -17,7 +17,6 @@ MAC
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 $ git clone https://github.com/YosysHQ/yosys.git
-![Alt text]("https://github.com/user-attachments/assets/84240792-c179-4be6-a37e-e72ae3d90840")
 
 $ cd yosys
 $ sudo apt install make # If make is not installed
@@ -28,5 +27,7 @@ $ sudo apt-get install build-essential clang bison flex \
 $ make config-gcc
 $ make
 $ sudo make install
+```
+![Alt text]("https://github.com/user-attachments/assets/84240792-c179-4be6-a37e-e72ae3d90840")
 
 
