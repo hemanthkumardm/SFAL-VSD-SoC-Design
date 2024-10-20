@@ -15,9 +15,10 @@ This repository documents my journey through the SFAL-VSD-SoC-Design program org
  
 ## Learning Milestones
 
-## Daily Progress Overview
+## Task Index
 
-| Day       | Task Description                                        | Status        |
-|-----------|---------------------------------------------------------|---------------|
-| [Day 1](Day1/)  | 1. Watched introductory video <br> 2. Created GitHub repo <br> 3. Documented summary in the repo | ✅ Completed   |
-
+| Day       | Folder          | Task Description                                           | Status        |
+|-----------|------------------|-----------------------------------------------------------|---------------|
+| [Day 1](Day1/)  | `Day1/`        | 1. Watched introductory video <br> 2. Created GitHub repo <br> 3. Documented summary in the repo | ✅ Completed   |
+| [Day 2](Day2/)  | `Day2/`        | 1. Installed tools <br> 2. Updated GitHub with tool snapshots  | 🚧 In Progress |
+| [Day 3](Day3/)  | `Day3/`        | 1. Studied SoC design fundamentals                 | ⏳ Pending     |
