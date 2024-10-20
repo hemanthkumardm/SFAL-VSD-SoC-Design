@@ -17,7 +17,7 @@ MAC
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 $ git clone https://github.com/YosysHQ/yosys.git
-<img width="890" alt="Screenshot 2024-10-20 at 2 24 36 PM" src="https://github.com/user-attachments/assets/84240792-c179-4be6-a37e-e72ae3d90840">
+![Alt text]("https://github.com/user-attachments/assets/84240792-c179-4be6-a37e-e72ae3d90840")
 
 $ cd yosys
 $ sudo apt install make # If make is not installed
