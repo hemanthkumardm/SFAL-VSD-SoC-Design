@@ -28,6 +28,7 @@ $ make config-gcc
 $ make
 $ sudo make install
 ```
-![Alt text]("https://github.com/user-attachments/assets/84240792-c179-4be6-a37e-e72ae3d90840")
+<img width="885" alt="Screenshot 2024-10-20 at 2 28 47 PM" src="https://github.com/user-attachments/assets/4d156b86-d67e-4521-a554-2058dde5387c">
+
 
 
