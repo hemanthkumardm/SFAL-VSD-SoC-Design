@@ -3,6 +3,11 @@
 ## Overview
 On Day 1, we focused on setting up the necessary tools for the SFAL-VSD-SoC-Design. This document outlines the installation steps for each tool required.
 
+## System Details.
+16GB RAM
+256GB SSD
+MAC
+
 ## Tools Setup
 
 <details>
@@ -10,8 +15,10 @@ On Day 1, we focused on setting up the necessary tools for the SFAL-VSD-SoC-Desi
     Instructions 
 
 ```bash
-$ sudo apt-get update
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 $ git clone https://github.com/YosysHQ/yosys.git
+<img width="890" alt="Screenshot 2024-10-20 at 2 24 36 PM" src="https://github.com/user-attachments/assets/84240792-c179-4be6-a37e-e72ae3d90840">
+
 $ cd yosys
 $ sudo apt install make # If make is not installed
 $ sudo apt-get install build-essential clang bison flex \
@@ -21,3 +28,5 @@ $ sudo apt-get install build-essential clang bison flex \
 $ make config-gcc
 $ make
 $ sudo make install
+
+
