@@ -1,14 +1,12 @@
 # Day 1: Tool Installation
 
 ## Overview
-On Day 1, we focused on setting up the necessary tools for the SFAL-VSD-SoC-Design program. This document outlines the installation steps for each tool required.
+On Day 1, we focused on setting up the necessary tools for the SFAL-VSD-SoC-Design. This document outlines the installation steps for each tool required.
 
 ## Tools Setup
 
 <details>
-<summary>Click to expand tools installation details</summary>
-
-### 1. Yosys
+<summary>Yosys</summary>
 ```bash
 $ sudo apt-get update
 $ git clone https://github.com/YosysHQ/yosys.git
