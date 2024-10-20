@@ -5,20 +5,20 @@ This repository documents my journey through the SFAL-VSD-SoC-Design program org
 ## overview of the Digital VLSI System-on-Chip (SoC) design and planning process
 
 1. **Chip Modeling**
-   - **Objective**: Achieve equivalence between the original specification model (O0) and the C model (O1).
+   - Achieve equivalence between the original specification model (O0) and the C model (O1).
 
 2. **RTL Architecture**
-   - **Objective**: Ensure equivalence between the specification model (O1) and the Register Transfer Level (RTL) representation (O2).
+   - Ensure equivalence between the specification model (O1) and the Register Transfer Level (RTL) representation (O2).
 
 3. **SoC Design Flow**
-   - **Objective**: Divide the chip design into processors and peripherals/IPs.
+   - Divide the chip design into processors and peripherals/IPs.
 
 4. **SoC Integration**
-   - **Objective**: Confirm equivalence across all stages (O1 == O2 == O3).
+   - Confirm equivalence across all stages (O1 == O2 == O3).
 
 5. **GDSII Creation**
-   - **Objective**: Prepare graphical data structure stream information for interchange.
-   - **Final Objective**: Ensure all models are equivalent (O1 == O2 == O3 == O4).
+   - Prepare graphical data structure stream information for interchange.
+   - Ensure all models are equivalent (O1 == O2 == O3 == O4).
 
 
 ## Repository Structure
