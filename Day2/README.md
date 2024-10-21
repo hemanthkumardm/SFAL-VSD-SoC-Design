@@ -41,8 +41,18 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
 <details>
     <summary>3. Introduction to Yosys and Logic Synthesis</summary>
     <details>
-        <summary>3. Part 1</summary>
+        <summary>Introduction to yosys</summary>
         <p> <!-- You can use <p> tags or directly place the images to format it better. -->
+            <img width="628" alt="Screenshot 2024-10-22 at 12 45 01 AM" src="[https://github.com/user-attachments/assets/00fe4aa1-6fcf-4bff-bfa9-8ae8fb95b36b](https://github.com/user-attachments/assets/626f512a-12f6-4972-ab9c-ffb057e0c191)">
+        </p>
+    </details>
+</details>
+
+<details>
+    <summary>4. Labs Using Yosys and Sky130 PDKs</summary>
+    <details>
+        <summary>Part 1</summary>
+        <p> 
             <img width="628" alt="Screenshot 2024-10-22 at 12 32 45 AM" src="https://github.com/user-attachments/assets/00fe4aa1-6fcf-4bff-bfa9-8ae8fb95b36b">
             <img width="608" alt="Screenshot 2024-10-22 at 12 33 55 AM" src="https://github.com/user-attachments/assets/a9a6fba4-2481-4b85-a2be-57fc6b63c236">
             <img width="641" alt="Screenshot 2024-10-22 at 12 34 25 AM" src="https://github.com/user-attachments/assets/16568d51-9d18-4975-9603-0a2e7806b85e">
@@ -51,11 +61,6 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
             <img width="1440" alt="Screenshot 2024-10-22 at 12 27 59 AM" src="https://github.com/user-attachments/assets/a28ab7f6-ab37-4f74-a1ee-e433352410e7">
         </p>
     </details>
-</details>
-
-<details>
-    <summary>4. Labs Using Yosys and Sky130 PDKs</summary>
-
 
 </details>
 
