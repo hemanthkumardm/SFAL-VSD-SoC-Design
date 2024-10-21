@@ -40,13 +40,13 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
 <details>
     <summary>3. Introduction to Yosys and Logic Synthesis</summary>
 
-   - **Description**: Coming soon...
+
 </details>
 
 <details>
     <summary>4. Labs Using Yosys and Sky130 PDKs</summary>
 
-   - **Description**: Coming soon...
+
 </details>
 
 ## Challenges Faced
