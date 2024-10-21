@@ -2,7 +2,7 @@
 
 This repository documents my journey through the SFAL-VSD-SoC-Design program organized by NASSCOM. The program focuses on system-on-chip (SoC) design, providing hands-on experience and practical knowledge in various aspects of VLSI and SoC development.
 
-## overview of the Digital VLSI System-on-Chip (SoC) design and planning process
+## Overview of the Digital VLSI System-on-Chip (SoC) design and planning process
 
 1. **Chip Modeling**
    - Achieve equivalence between the original specification model (O0) and the C model (O1).
