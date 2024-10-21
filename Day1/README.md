@@ -1,7 +1,7 @@
 # Day 1: Tool Installation
 
 ## Overview
-On Day 1, we focused on setting up the necessary tools for the SFAL-VSD-SoC-Design. This document outlines the installation steps for each tool required.
+On Day 1, Setting up the necessary tools for the SFAL-VSD-SoC-Design. This document outlines the installation steps for each tool required.
 
 ## System Details
 - **RAM**: 16GB
