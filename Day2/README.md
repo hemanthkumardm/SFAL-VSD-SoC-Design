@@ -42,8 +42,50 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
     <summary>3. Introduction to Yosys and Logic Synthesis</summary>
     <details>
         <summary>Introduction to yosys</summary>
-        <p> <!-- You can use <p> tags or directly place the images to format it better. -->
-            <img width="628" alt="Screenshot 2024-10-22 at 12 45 01 AM" src="[https://github.com/user-attachments/assets/00fe4aa1-6fcf-4bff-bfa9-8ae8fb95b36b](https://github.com/user-attachments/assets/626f512a-12f6-4972-ab9c-ffb057e0c191)">
+        it is a tool used to convert RTL to netlist
+        used tool is yosys
+        
+        
+        <p> 
+            ## yosys setup
+            netlist is representing a design in the form of cell present in the .lib
+            netlist is the representation of the design in the form of cell present in .lib
+            ![Screenshot 2024-10-22 at 12 45 01 AM](https://github.com/user-attachments/assets/50f13129-e000-45fc-a638-e76b554b804e)
+            ## verify the synthesis
+            Note: the set of primary input / primary output will be remain same between the RTl design and synthesized netlist same test bench can be used
+<img width="1440" alt="Screenshot 2024-10-22 at 12 45 20 AM" src="https://github.com/user-attachments/assets/2d289936-912b-4a13-a402-af55b73aeeab">
+        </p>
+    </details>
+    <details>
+        <summary>Introduction to Logic Synthesis</summary>
+        1. RTK design :- Behavioural representation of the required specification
+<img width="402" alt="Screenshot 2024-10-22 at 1 03 31 AM" src="https://github.com/user-attachments/assets/8af7b724-9f76-45aa-a56b-21fbd58f2757">
+        2. Synthesis :- RTL tp gate level translation
+        the design is converted into gates and the connections are mode between the gates
+        3. the output of this is called netlist
+        <img width="446" alt="Screenshot 2024-10-22 at 1 07 11 AM" src="https://github.com/user-attachments/assets/1d80cc79-2931-4b27-9eae-fd5b9301cdee">
+        4. .lib :- collection of logical modules
+        includes basic logic gates like AND, OR, NOT etc.
+        different flavours of same gate
+        * 2-input AND gates
+         . slow
+         . medium 
+         . fast
+        it contains standard cells to implement any boolean logic functionality
+        
+
+<img width="1440" alt="Screenshot 2024-10-22 at 1 04 02 AM" src="https://github.com/user-attachments/assets/98351880-36b9-42e4-9a8e-a177be9e8626">
+
+        
+        
+        <p> 
+            ## yosys setup
+            netlist is representing a design in the form of cell present in the .lib
+            netlist is the representation of the design in the form of cell present in .lib
+            ![Screenshot 2024-10-22 at 12 45 01 AM](https://github.com/user-attachments/assets/50f13129-e000-45fc-a638-e76b554b804e)
+            ## verify the synthesis
+            Note: the set of primary input / primary output will be remain same between the RTl design and synthesized netlist same test bench can be used
+<img width="1440" alt="Screenshot 2024-10-22 at 12 45 20 AM" src="https://github.com/user-attachments/assets/2d289936-912b-4a13-a402-af55b73aeeab">
         </p>
     </details>
 </details>
