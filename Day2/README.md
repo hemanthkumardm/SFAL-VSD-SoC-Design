@@ -41,7 +41,7 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
 <details>
      <summary>3. Introduction to Yosys and Logic Synthesis</summary>
 <details>
-    part-1: 
+    <summary>3. Part 1</summary>
        
     <img width="628" alt="Screenshot 2024-10-22 at 12 32 45 AM" src="https://github.com/user-attachments/assets/00fe4aa1-6fcf-4bff-bfa9-8ae8fb95b36b">
 <img width="608" alt="Screenshot 2024-10-22 at 12 33 55 AM" src="https://github.com/user-attachments/assets/a9a6fba4-2481-4b85-a2be-57fc6b63c236">
