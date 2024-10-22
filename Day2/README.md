@@ -68,10 +68,18 @@ On Day 2, the focus was on Verilog RTL design and synthesis using tools like Ive
 4. **.lib**: A collection of logical modules, including basic logic gates (e.g., AND, OR, NOT). Different flavors of the same gate exist (e.g., slow, medium, fast versions).
 
 5. **Why Different Flavors of Gates?**: Faster cells are used for performance, while slower cells meet hold time constraints.
-
    ![Fast cells](https://github.com/user-attachments/assets/44928f5d-7fd3-4ecd-9e95-cf905cde974b)
    ![Slow cells](https://github.com/user-attachments/assets/9141d461-acad-4b9b-9467-958ab1a6f605)
+7. **Selection of cells.
+<img width="1042" alt="Screenshot 2024-10-22 at 9 53 13 AM" src="https://github.com/user-attachments/assets/080568c9-13af-4340-8448-a80009099884">
+8. **Synthesis.
+<img width="1059" alt="Screenshot 2024-10-22 at 9 54 08 AM" src="https://github.com/user-attachments/assets/97a840ad-cc7b-49de-a7c3-81874f6f25fb">
+
+   
 </details>
+
+
+
 
 <details>
     <summary>4. Labs Using Yosys and SKY130 PDKs</summary>
