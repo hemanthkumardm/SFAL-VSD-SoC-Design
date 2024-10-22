@@ -103,4 +103,21 @@ On Day 2, the focus was on Verilog RTL design and synthesis using tools like Ive
   5. Perform logic optimization using ABC algorithm:  
      `abc -liberty ../mylib/lib/sky130_fd_sc_hd__mux__2_1.lib`  
      ![Lab Example 5](https://github.com/user-attachments/assets/586268ee-de55-4265-b8ca-1390df63b3c3)
+  6. Creating netlist:
+     `write_verilog good_mux_netlist.v`
+     ![netlist creation](https://github.com/user-attachments/assets/e8478c08-3186-4e17-89b5-73ce7c92eaca)
+  7. For Precise netlist:
+     `write_verilog -noattr good_mux_netlist.v`
+     ![Precise nerlist](https://github.com/user-attachments/assets/26c0f7e3-2a13-4e24-9b85-76b5dbfaba7d)
+  8. Explaination of .lib library:
+     `!gvim ../mylib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`
+     ![Explanation](https://github.com/user-attachments/assets/fa116f8d-9874-4cf5-a1e0-465c88eb6dc3)
+     tt = typical (Process)
+     025C = 77 °F (Temperature)
+     1v80 = Voltage
+     ![lib filename explaination](https://github.com/user-attachments/assets/8e2fac9d-6ef7-4dce-8e20-e829e6c7bbef)
+
+
+
+     
 </details>
