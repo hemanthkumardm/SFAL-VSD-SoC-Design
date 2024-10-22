@@ -1,7 +1,7 @@
 # Day 2: Introduction to Verilog RTL Design and Synthesis
 
 ## Overview
-On Day 2, we focused on Verilog RTL design and synthesis using tools like Iverilog and Yosys, within the SKY130 process design kit (PDK).
+On Day 2, Focused on Verilog RTL design and synthesis using tools like Iverilog and Yosys, within the SKY130 process design kit (PDK).
 
 ## Tasks Completed
 
@@ -58,7 +58,7 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
     </details>
     <details>
         <summary>Introduction to Logic Synthesis</summary>
-        1. RTK design :- Behavioural representation of the required specification
+        1. RTL design :- Behavioural representation of the required specification
 <img width="402" alt="Screenshot 2024-10-22 at 1 03 31 AM" src="https://github.com/user-attachments/assets/8af7b724-9f76-45aa-a56b-21fbd58f2757">
         2. Synthesis :- RTL tp gate level translation
         the design is converted into gates and the connections are mode between the gates
@@ -66,12 +66,21 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
         <img width="446" alt="Screenshot 2024-10-22 at 1 07 11 AM" src="https://github.com/user-attachments/assets/1d80cc79-2931-4b27-9eae-fd5b9301cdee">
         4. .lib :- collection of logical modules
         includes basic logic gates like AND, OR, NOT etc.
-        different flavours of same gate
+        contains of different flavours of same gate
         * 2-input AND gates
          . slow
          . medium 
          . fast
         it contains standard cells to implement any boolean logic functionality
+        fast cells to meet performance, slow cells to meet HOLD
+        5. why different flavours of gates?
+        <img width="1017" alt="Screenshot 2024-10-22 at 9 13 38 AM" src="https://github.com/user-attachments/assets/44928f5d-7fd3-4ecd-9e95-cf905cde974b">
+        6. Are fast cells sufficient? why do we need slow cells?
+        <img width="983" alt="Screenshot 2024-10-22 at 9 15 27 AM" src="https://github.com/user-attachments/assets/9141d461-acad-4b9b-9467-958ab1a6f605">
+        7. faster cells vs slow cells
+
+        <img width="984" alt="Screenshot 2024-10-22 at 9 16 02 AM" src="https://github.com/user-attachments/assets/4403addf-2112-455e-b176-f1fde664dc13">
+
         
 
 <img width="1440" alt="Screenshot 2024-10-22 at 1 04 02 AM" src="https://github.com/user-attachments/assets/98351880-36b9-42e4-9a8e-a177be9e8626">
@@ -80,7 +89,6 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
         
         <p> 
             ## yosys setup
-            netlist is representing a design in the form of cell present in the .lib
             netlist is the representation of the design in the form of cell present in .lib
             ![Screenshot 2024-10-22 at 12 45 01 AM](https://github.com/user-attachments/assets/50f13129-e000-45fc-a638-e76b554b804e)
             ## verify the synthesis
@@ -89,6 +97,7 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
         </p>
     </details>
 </details>
+
 
 <details>
     <summary>4. Labs Using Yosys and Sky130 PDKs</summary>
@@ -107,10 +116,10 @@ On Day 2, we focused on Verilog RTL design and synthesis using tools like Iveril
 </details>
 
 ## Challenges Faced
-- List any challenges you encountered here.
+
 
 ## Next Steps
-- Outline your next steps and goals for upcoming tasks.
+
 
 ## Resources
-- List any references or resources that were useful.
+
