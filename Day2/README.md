@@ -88,20 +88,19 @@ On Day 2, the focus was on Verilog RTL design and synthesis using tools like Ive
 - **Lab Steps**:
   - Use Iverilog to simulate RTL and generate netlists using Yosys.
   - Visualize waveforms and analyze synthesized designs.
-
-   ![Lab Example 1](https://github.com/user-attachments/assets/00fe4aa1-6fcf-4bff-bfa9-8ae8fb95b36b)
-   ![Lab Example 2](https://github.com/user-attachments/assets/a9a6fba4-2481-4b85-a2be-57fc6b63c236)
-   ![Lab Example 3](https://github.com/user-attachments/assets/16568d51-9d18-4975-9603-0a2e7806b85e)
-   ![Lab Example 4](https://github.com/user-attachments/assets/bb294d66-7aac-4157-9c0c-42fe84e4c5f2)
-</details>
-
-## Challenges Faced
-<details>
-    <summary>Expand to view challenges</summary>
-
-</details>
-
-## Resources
-<details>
-
+  1. Invoke yosys to start the synthesis tool:  
+     `yosys`  
+     ![Lab Example 1](https://github.com/user-attachments/assets/00fe4aa1-6fcf-4bff-bfa9-8ae8fb95b36b)
+  2. Read liberty files (library cells):  
+     `read_liberty -lib ../mylib/lib/sky130_fd_sc_hd__mux__2_1.lib`  
+     ![Lab Example 2](https://github.com/user-attachments/assets/a9a6fba4-2481-4b85-a2be-57fc6b63c236)
+  3. Check for errors by reading Verilog design:  
+     `read_verilog good_mux.v`  
+     ![Lab Example 3](https://github.com/user-attachments/assets/16568d51-9d18-4975-9603-0a2e7806b85e)
+  4. Run synthesis process on top-level module:  
+     `synth -top good_mux`  
+     ![Lab Example 4](https://github.com/user-attachments/assets/bb294d66-7aac-4157-9c0c-42fe84e4c5f2)
+  5. Perform logic optimization using ABC algorithm:  
+     `abc -liberty ../mylib/lib/sky130_fd_sc_hd__mux__2_1.lib`  
+     ![Lab Example 5](https://github.com/user-attachments/assets/586268ee-de55-4265-b8ca-1390df63b3c3)
 </details>
