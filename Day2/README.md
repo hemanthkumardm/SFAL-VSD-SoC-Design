@@ -5,7 +5,8 @@ On Day 2, the focus was on Verilog RTL design and synthesis using tools like Ive
 
 ## Tasks Completed
 
-### 1. Introduction to Open-Source Simulator Iverilog
+<details>
+    <summary>1. Introduction to Open-Source Simulator Iverilog</summary>
 
 - **Key Concepts**:
   - **Simulator**: A tool used to check the design of RTL (Register Transfer Level). The tool used for this purpose is Iverilog.
@@ -24,8 +25,10 @@ On Day 2, the focus was on Verilog RTL design and synthesis using tools like Ive
 - **Iverilog-Based Simulation Flow**:
   - Both the design and the testbench are given to Iverilog.
   - Iverilog generates a VCD (Value Change Dump) file, which is then provided to GTKWave for waveform visualization.
+</details>
 
-### 2. Labs Using Iverilog and GTKWave
+<details>
+    <summary>2. Labs Using Iverilog and GTKWave</summary>
 
 - **Steps**:
   1. Load the latch and its testbench into Iverilog, then execute the `a.out` file.
@@ -35,8 +38,10 @@ On Day 2, the focus was on Verilog RTL design and synthesis using tools like Ive
   2. Load the `.vcd` file into GTKWave for waveform visualization.
      
      ![GTKWave Visualization](https://github.com/user-attachments/assets/475d843e-b965-4af9-a84b-c81a4ed22ae8)
+</details>
 
-### 3. Introduction to Yosys and Logic Synthesis
+<details>
+    <summary>3. Introduction to Yosys and Logic Synthesis</summary>
 
 #### Introduction to Yosys
 - **Yosys**: A tool used to convert RTL into a netlist.
@@ -62,13 +67,14 @@ On Day 2, the focus was on Verilog RTL design and synthesis using tools like Ive
 
 4. **.lib**: A collection of logical modules, including basic logic gates (e.g., AND, OR, NOT). Different flavors of the same gate exist (e.g., slow, medium, fast versions).
 
-   ![.lib Explanation](https://github.com/user-attachments/assets/44928f5d-7fd3-4ecd-9e95-cf905cde974b)
-
 5. **Why Different Flavors of Gates?**: Faster cells are used for performance, while slower cells meet hold time constraints.
 
-   ![Gate Flavors](https://github.com/user-attachments/assets/9141d461-acad-4b9b-9467-958ab1a6f605)
+   ![Fast cells](https://github.com/user-attachments/assets/44928f5d-7fd3-4ecd-9e95-cf905cde974b)
+   ![Slow cells](https://github.com/user-attachments/assets/9141d461-acad-4b9b-9467-958ab1a6f605)
+</details>
 
-### 4. Labs Using Yosys and SKY130 PDKs
+<details>
+    <summary>4. Labs Using Yosys and SKY130 PDKs</summary>
 
 #### Part 1
 - **Lab Steps**:
@@ -79,13 +85,15 @@ On Day 2, the focus was on Verilog RTL design and synthesis using tools like Ive
    ![Lab Example 2](https://github.com/user-attachments/assets/a9a6fba4-2481-4b85-a2be-57fc6b63c236)
    ![Lab Example 3](https://github.com/user-attachments/assets/16568d51-9d18-4975-9603-0a2e7806b85e)
    ![Lab Example 4](https://github.com/user-attachments/assets/bb294d66-7aac-4157-9c0c-42fe84e4c5f2)
+</details>
 
 ## Challenges Faced
-- [Add any challenges or issues encountered]
+<details>
+    <summary>Expand to view challenges</summary>
 
-## Next Steps
-- Continue improving understanding of Verilog RTL design and synthesis.
-- Further labs with more complex designs in Verilog and synthesized using Yosys and SKY130 PDKs.
+</details>
 
 ## Resources
-- [Add any references or materials used]
+<details>
+
+</details>
