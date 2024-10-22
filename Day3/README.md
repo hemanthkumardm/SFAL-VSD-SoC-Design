@@ -392,13 +392,8 @@ endmodule
 <br>
 <img width="1286" alt="Screenshot 2024-10-23 at 12 25 12 AM" src="https://github.com/user-attachments/assets/0f76055b-6abd-4d3d-8ebc-a199e3cbb2e6">
 
-
-
-
 **After Synthesizing**:<br>
 <img width="337" alt="Screenshot 2024-10-23 at 12 26 15 AM" src="https://github.com/user-attachments/assets/9af99fb3-1fa9-4a58-bfd1-307f8e521c9e">
-
-
 
 **Optimization Command**: <br>
 ```bash
@@ -407,17 +402,64 @@ dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 <br>
 <img width="621" alt="Screenshot 2024-10-23 at 12 26 43 AM" src="https://github.com/user-attachments/assets/82385fa2-a1ed-48bf-8a44-ad943f1cb63c">
 
-
-
 **Link to Liberty File**:<br>
 <img width="440" alt="Screenshot 2024-10-23 at 12 27 22 AM" src="https://github.com/user-attachments/assets/c58258ba-6f90-4ebb-9f9e-e699d2530f68">
-
-
-
 
 **Final Output**:<br>
 <img width="867" alt="Screenshot 2024-10-23 at 12 28 29 AM" src="https://github.com/user-attachments/assets/ab4841de-c155-4ff5-b648-3e445c78eb95">
 
 </details>
+</details>
+<details>
+<summary>Part 4: Sequential Optimizations for Unused Outputs</summary>
+<details>
+<summary>counter_opt</summary>
+
+```verilog
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = count[0];
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+**Expected Waveform**
+<img width="984" alt="Screenshot 2024-10-23 at 1 03 08 AM" src="https://github.com/user-attachments/assets/5cf45a39-6350-47c8-b804-c89bd8846823">
+<br>
+
+**Output Waveform**
+<img width="1284" alt="Screenshot 2024-10-23 at 1 05 40 AM" src="https://github.com/user-attachments/assets/24a9d1e2-b5af-4194-9cca-c9167adc448e">
+
+<br>
+
+**After Synthesizing**:<br>
+<img width="370" alt="Screenshot 2024-10-23 at 1 06 45 AM" src="https://github.com/user-attachments/assets/98cbf3aa-1595-4cac-bfb1-efcc0a943115">
+
+
+**Optimization Command**: <br>
+```bash
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+```
+<br>
+<img width="637" alt="Screenshot 2024-10-23 at 1 07 34 AM" src="https://github.com/user-attachments/assets/0e612b4b-33b8-4926-90fa-f6e0009f9caa">
+
+
+**Link to Liberty File**:<br>
+<img width="464" alt="Screenshot 2024-10-23 at 1 07 57 AM" src="https://github.com/user-attachments/assets/75551731-3713-414c-885f-ad315f2eedd9">
+<br>
+
+
+**Final Output**:<br>
+<img width="1229" alt="Screenshot 2024-10-23 at 1 08 45 AM" src="https://github.com/user-attachments/assets/febebd0f-db4b-4961-a968-3e76f4d98ecd">
+<br>
+</details>
+
 
 </details>
