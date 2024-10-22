@@ -3,7 +3,6 @@
 ## Overview
 On Day 2, the focus was on Verilog RTL design and synthesis using tools like Iverilog and Yosys within the SKY130 process design kit (PDK).
 
-## Tasks Completed
 
 <details>
     <summary>1. Introduction to Open-Source Simulator Iverilog</summary>
