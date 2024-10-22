@@ -160,3 +160,264 @@ opt_clean -purge
 <img width="1022" alt="Final Output for opt_check4" src="https://github.com/user-attachments/assets/d41c1e0d-b0cb-4eba-be32-eb8908423dfa">
 </details>
 </details>
+
+
+<details>
+<summary>Part 3: Sequential Logic Optimizations</summary>
+<details>
+<summary>dff_const1</summary>
+
+```verilog
+module dff_const1(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+```
+**Expected Waveform**
+![WhatsApp Image 2024-10-22 at 22 40 43](https://github.com/user-attachments/assets/9cdb1c3a-f0cb-4f82-a257-77252c629916)
+<br>
+**Output Waveform**
+<img width="1287" alt="Screenshot 2024-10-22 at 10 43 08 PM" src="https://github.com/user-attachments/assets/143a27d7-c1f9-49d6-bbf1-ffa6385f8785">
+<br>
+
+**After Synthesizing**:<br>
+<img width="320" alt="Screenshot 2024-10-22 at 10 47 05 PM" src="https://github.com/user-attachments/assets/823608a2-378b-407a-a844-cf1451848bdf">
+
+**Optimization Command**: <br>
+```bash
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+```
+<br>
+<img width="597" alt="Screenshot 2024-10-22 at 10 49 03 PM" src="https://github.com/user-attachments/assets/2d0995ba-5b42-422a-8ef7-d1e331baf301">
+
+**Link to Liberty File**:<br>
+<img width="427" alt="Screenshot 2024-10-22 at 10 51 05 PM" src="https://github.com/user-attachments/assets/753cfb99-af11-421e-804d-cff9d5da955c"><br>
+
+**Final Output**:<br>
+<img width="1150" alt="Screenshot 2024-10-22 at 10 52 26 PM" src="https://github.com/user-attachments/assets/b039c39e-0de1-4b9c-85c8-ba461781a90a"><br>
+</details>
+
+<details>
+<summary>dff_const2</summary>
+
+```verilog
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+```
+**Expected Waveform**
+![WhatsApp Image 2024-10-22 at 22 40 44](https://github.com/user-attachments/assets/fee60c75-1788-44fa-a15e-ac344f9a507a)
+<br>
+
+**Output Waveform**
+<br>
+<img width="1287" alt="Screenshot 2024-10-22 at 11 04 08 PM" src="https://github.com/user-attachments/assets/1fdc4a43-6f55-4549-a77d-870522cb7601">
+
+**After Synthesizing**:<br>
+<img width="313" alt="Screenshot 2024-10-22 at 11 09 01 PM" src="https://github.com/user-attachments/assets/03fd4ec1-6519-4e9b-a47b-1740142f2330">
+
+**Optimization Command**: <br>
+```bash
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+```
+<br>
+<img width="588" alt="Screenshot 2024-10-22 at 11 09 26 PM" src="https://github.com/user-attachments/assets/ab80df34-1495-4347-9915-35ae8f2ac5b4">
+
+**Link to Liberty File**:<br>
+<img width="637" alt="Screenshot 2024-10-22 at 11 11 45 PM" src="https://github.com/user-attachments/assets/9398f8f9-fcec-4377-93c1-2189ed6f8f78"><br>
+
+**Final Output**:<br>
+<img width="611" alt="Screenshot 2024-10-22 at 11 12 30 PM" src="https://github.com/user-attachments/assets/a4ac80a7-30a6-4c98-b0b0-52690c4f1b91"><br>
+
+</details>
+
+<details>
+<summary>dff_const3</summary>
+
+```verilog
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+**Expected Waveform**
+<img width="376" alt="Screenshot 2024-10-22 at 11 54 53 PM" src="https://github.com/user-attachments/assets/c974fc7e-52e3-44f3-a82d-a240fe6e934d">
+
+<br>
+
+**Output Waveform**
+<br>
+<img width="1286" alt="Screenshot 2024-10-22 at 11 59 12 PM" src="https://github.com/user-attachments/assets/9cd238cf-4acc-4ed4-b135-5de4235cf8f7">
+
+
+**After Synthesizing**:<br>
+<img width="305" alt="Screenshot 2024-10-23 at 12 00 36 AM" src="https://github.com/user-attachments/assets/e2f2a01b-3a54-4382-95df-3580243fc8ce">
+
+
+**Optimization Command**: <br>
+```bash
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+```
+<br>
+<img width="582" alt="Screenshot 2024-10-23 at 12 01 07 AM" src="https://github.com/user-attachments/assets/f8022384-3eb3-427b-a8c9-f8ef69eee002">
+
+
+**Link to Liberty File**:<br>
+<img width="432" alt="Screenshot 2024-10-23 at 12 01 44 AM" src="https://github.com/user-attachments/assets/9ce42105-b793-4271-ad0a-eea8133dca36">
+
+
+**Final Output**:<br>
+<img width="1325" alt="Screenshot 2024-10-23 at 12 02 20 AM" src="https://github.com/user-attachments/assets/d2de502f-c9b1-46cd-821c-8e14990e83a0">
+
+
+</details>
+
+<details>
+<summary>dff_const4</summary>
+
+```verilog
+module dff_const4(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b1;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+**Expected Waveform**
+![WhatsApp Image 2024-10-23 at 00 10 23](https://github.com/user-attachments/assets/a7714426-eb75-49d2-bfd9-3dd61362d8d7)
+
+
+<br>
+
+**Output Waveform**
+<br>
+<img width="1286" alt="Screenshot 2024-10-23 at 12 13 57 AM" src="https://github.com/user-attachments/assets/447d7895-c7a0-4a49-bd9d-085694639c41">
+
+
+
+**After Synthesizing**:<br>
+<img width="325" alt="Screenshot 2024-10-23 at 12 11 46 AM" src="https://github.com/user-attachments/assets/773084eb-9ed5-45c2-878b-a6bb3e55e063">
+
+
+**Optimization Command**: <br>
+```bash
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+```
+<br>
+<img width="576" alt="Screenshot 2024-10-23 at 12 12 24 AM" src="https://github.com/user-attachments/assets/31633906-13ab-45bc-b08e-d665f5f3fd0a">
+
+
+**Link to Liberty File**:<br>
+<img width="662" alt="Screenshot 2024-10-23 at 12 12 50 AM" src="https://github.com/user-attachments/assets/92ebaa3e-b8e8-4cb5-995a-2c0bd6f9bf3c">
+
+
+
+**Final Output**:<br>
+<img width="612" alt="Screenshot 2024-10-23 at 12 13 14 AM" src="https://github.com/user-attachments/assets/1a8f460a-13fa-43ed-87e4-f6ed1817cb0c">
+
+
+
+</details>
+
+<details>
+<summary>dff_const5</summary>
+
+```verilog
+module dff_const5(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b0;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+**Expected Waveform**
+![WhatsApp Image 2024-10-23 at 00 24 55](https://github.com/user-attachments/assets/3efde1f6-4a20-43c0-b8f9-14b06ba2e3a5)
+
+
+
+<br>
+
+**Output Waveform**
+<br>
+<img width="1286" alt="Screenshot 2024-10-23 at 12 25 12 AM" src="https://github.com/user-attachments/assets/0f76055b-6abd-4d3d-8ebc-a199e3cbb2e6">
+
+
+
+
+**After Synthesizing**:<br>
+<img width="337" alt="Screenshot 2024-10-23 at 12 26 15 AM" src="https://github.com/user-attachments/assets/9af99fb3-1fa9-4a58-bfd1-307f8e521c9e">
+
+
+
+**Optimization Command**: <br>
+```bash
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+```
+<br>
+<img width="621" alt="Screenshot 2024-10-23 at 12 26 43 AM" src="https://github.com/user-attachments/assets/82385fa2-a1ed-48bf-8a44-ad943f1cb63c">
+
+
+
+**Link to Liberty File**:<br>
+<img width="440" alt="Screenshot 2024-10-23 at 12 27 22 AM" src="https://github.com/user-attachments/assets/c58258ba-6f90-4ebb-9f9e-e699d2530f68">
+
+
+
+
+**Final Output**:<br>
+<img width="867" alt="Screenshot 2024-10-23 at 12 28 29 AM" src="https://github.com/user-attachments/assets/ab4841de-c155-4ff5-b648-3e445c78eb95">
+
+</details>
+
+</details>
