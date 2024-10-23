@@ -1,4 +1,4 @@
-# Day 2: Introduction to Verilog RTL Design and Synthesis
+# Day 1: Introduction to Verilog RTL Design and Synthesis
 
 ## Overview
 On Day 2, the focus was on Verilog RTL design and synthesis using tools like Iverilog and Yosys within the SKY130 process design kit (PDK).
