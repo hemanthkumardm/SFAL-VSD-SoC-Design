@@ -1,4 +1,4 @@
-# Day 1: Tool Installation
+# Day 0: Tool Installation
 
 ## Overview
 On Day 1, Setting up the necessary tools for the SFAL-VSD-SoC-Design. This document outlines the installation steps for each tool required.
