@@ -8,7 +8,7 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
 <details>
   <summary>SKY130RTL D2SK1 - Introduction to Timing Libraries (.libs)</summary>
 
-  ### Lab4 - Introduction to .lib Files (Parts 1-3)
+  ### Introduction to .lib Files (Parts 1-3)
   - Studied the structure and significance of `.lib` files, which are essential for timing analysis and cell characterization.
   - Analyzed timing arcs, cell delays, and power information contained in `.lib` files.
   - Explanation of .lib library:
@@ -41,7 +41,7 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
 <details>
   <summary>SKY130RTL D2SK2 - Hierarchical vs Flat Synthesis</summary>
 
-  ### Lab05 - Hierarchical vs Flat Synthesis (Parts 1-2)
+  ### Hierarchical vs Flat Synthesis (Parts 1-2)
   - Understood how hierarchical synthesis allows for modular design, while flat synthesis provides a single-level design view.
   - Conducted synthesis experiments to observe the impact on area, power, and performance.
   
@@ -125,7 +125,7 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
 <details>
   <summary>SKY130RTL D2SK3 - Various Flop Coding Styles and Optimization</summary>
 
-  ### Why Flops and Flop Coding Styles (Parts 1-2)
+  ### Why Flops and Flop Coding Styles
   - Learned about the importance of flip-flops in digital design and explored different flop coding styles.
   - Flops are used to minimize the glitches.
   - <img width="720" alt="Screenshot 2024-10-23 at 7 27 47 PM" src="https://github.com/user-attachments/assets/c0488023-1a2c-46ae-955d-955815aab11c">
@@ -160,10 +160,10 @@ endmodule
 ![WhatsApp Image 2024-10-23 at 19 37 15](https://github.com/user-attachments/assets/8d5e39c9-977b-4801-bfd5-9397bdf07d3d)
 
 
-  ### Lab Flop Synthesis Simulations (Parts 1-2)
+  ### Lab Flop Synthesis Simulations 
   - Simulated different flop designs to compare their synthesis results.
   
-  ### Interesting Optimizations (Parts 1-2)
+  ### Interesting Optimizations
   - Applied optimizations to the flop designs to reduce area and improve performance.
 
   #### Key Learnings:
