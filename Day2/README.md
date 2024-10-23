@@ -71,10 +71,6 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
     <img width="260" alt="Screenshot 2024-10-23 at 12 35 04 PM" src="https://github.com/user-attachments/assets/daf0dcde-46e2-43f7-9d1a-7cd56d40ed23">
     **design hierarchy**<br>
     <img width="254" alt="Screenshot 2024-10-23 at 12 35 32 PM" src="https://github.com/user-attachments/assets/60bc031d-7865-411f-836d-017b0657f710"><br>
-    ****
-
-
-
 
 </details>
 
@@ -83,6 +79,41 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
 
   ### Why Flops and Flop Coding Styles (Parts 1-2)
   - Learned about the importance of flip-flops in digital design and explored different flop coding styles.
+  - Flops are used to minimize the glitches.
+  - <img width="720" alt="Screenshot 2024-10-23 at 7 27 47 PM" src="https://github.com/user-attachments/assets/c0488023-1a2c-46ae-955d-955815aab11c">
+  #### Flop Coding Styles
+  **dff_asyncres.v**
+  ```verilog
+    module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
+    always @ (posedge clk , posedge async_reset)
+    begin
+	if(async_reset)
+	    q <= 1'b0;
+	else	
+	    q <= d;
+    end
+    endmodule
+  ```
+   **Waveforms**
+![WhatsApp Image 2024-10-23 at 19 01 24](https://github.com/user-attachments/assets/82f4bc94-4b1e-418b-bb9f-6f1e52d45df2)
+**dff_syncres.**
+```verilog
+module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+always @ (posedge clk )
+begin
+	if (sync_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+**Waveforms**
+![WhatsApp Image 2024-10-23 at 19 37 15](https://github.com/user-attachments/assets/8d5e39c9-977b-4801-bfd5-9397bdf07d3d)
+
+
+
+
 
   ### Lab Flop Synthesis Simulations (Parts 1-2)
   - Simulated different flop designs to compare their synthesis results.
