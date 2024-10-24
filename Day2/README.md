@@ -212,13 +212,9 @@ endmodule
 **Expected Output vs Original Output**
 <img width="1320" alt="Screenshot 2024-10-24 at 10 07 50 AM" src="https://github.com/user-attachments/assets/4f62104f-8c44-476b-a51d-7c1855e1ef15">
 
-
-
-
-
-  
   ### Interesting Optimizations
   - Applied optimizations to the flop designs to reduce area and improve performance.
+    
 
 
 
