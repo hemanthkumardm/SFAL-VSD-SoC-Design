@@ -26,6 +26,8 @@ On Day 1, the focus was on Verilog RTL design and synthesis using tools like Ive
   - Iverilog generates a VCD (Value Change Dump) file, which is then provided to GTKWave for waveform visualization.
 </details>
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <details>
     <summary>2. Labs Using Iverilog and GTKWave</summary>
 
