@@ -130,6 +130,7 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
   - Flops are used to minimize the glitches.
   - <img width="720" alt="Screenshot 2024-10-23 at 7 27 47 PM" src="https://github.com/user-attachments/assets/c0488023-1a2c-46ae-955d-955815aab11c">
   #### Flop Coding Styles
+
   **dff_asyncres.v**
   ```verilog
     module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
@@ -160,15 +161,66 @@ endmodule
 ![WhatsApp Image 2024-10-23 at 19 37 15](https://github.com/user-attachments/assets/8d5e39c9-977b-4801-bfd5-9397bdf07d3d)
 
 
-  ### Lab Flop Synthesis Simulations 
-  - Simulated different flop designs to compare their synthesis results.
+  ### Lab of Asyncronous Flop Synthesis Simulations 
+  **dff_asyncres.v**
+  ```verilog
+module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+<img width="1286" alt="Screenshot 2024-10-24 at 9 25 00 AM" src="https://github.com/user-attachments/assets/880462f3-c69c-4e6b-9ac1-86a9f8e72650">
+
+**dff_async_set.v**
+```verilog
+module dff_async_set ( input clk ,  input async_set , input d , output reg q );
+always @ (posedge clk , posedge async_set)
+begin
+	if(async_set)
+		q <= 1'b1;
+	else	
+		q <= d;
+end
+endmodule
+```
+<img width="1285" alt="Screenshot 2024-10-24 at 9 27 24 AM" src="https://github.com/user-attachments/assets/0dfc239e-1007-412b-b14b-72165391f41c">
+
+### Lab of Syncronous Flop Synthesis Simulations 
+**dff_syncres.v**
+<img width="314" alt="Screenshot 2024-10-24 at 9 41 40 AM" src="https://github.com/user-attachments/assets/cce3482e-ca65-4e01-aadb-246202de04a3">
+
+**Output**
+<img width="855" alt="Screenshot 2024-10-24 at 9 43 51 AM" src="https://github.com/user-attachments/assets/02117e39-8828-45c8-ac16-3bea622eadcf">
+
+**dff_async_set.v**
+<img width="361" alt="Screenshot 2024-10-24 at 9 56 23 AM" src="https://github.com/user-attachments/assets/dc3de8fb-3e91-41bc-802a-74827495563d">
+
+**Output**
+<img width="923" alt="Screenshot 2024-10-24 at 10 00 45 AM" src="https://github.com/user-attachments/assets/177f96c6-fc1d-4b64-8441-e2a515d90d3d">
+
+**dff_syncres.v**
+<img width="306" alt="Screenshot 2024-10-24 at 10 02 33 AM" src="https://github.com/user-attachments/assets/976bd57e-2ae1-4790-b07f-e1f569b52bfe">
+
+**Output**
+<img width="889" alt="Screenshot 2024-10-24 at 10 03 58 AM" src="https://github.com/user-attachments/assets/7d6c40b0-9b2b-4123-b818-a83985370f4c">
+
+**Expected Output vs Original Output**
+<img width="1320" alt="Screenshot 2024-10-24 at 10 07 50 AM" src="https://github.com/user-attachments/assets/4f62104f-8c44-476b-a51d-7c1855e1ef15">
+
+
+
+
+
   
   ### Interesting Optimizations
   - Applied optimizations to the flop designs to reduce area and improve performance.
 
-  #### Key Learnings:
-  - Efficient flop coding styles that optimize the design's performance and resource utilization.
-  - Techniques for optimizing the synthesis results of flop designs.
+
 
 </details>
 
