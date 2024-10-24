@@ -196,29 +196,53 @@ On Day 4, I focused on Gate-Level Simulation (GLS), the differences between bloc
   ### Lab GLS Synth Sim Mismatch
   - Performed Gate-Level Simulation to identify synthesis-simulation mismatches.
   - Debugged and resolved mismatches using simulation output.
-    **Example 1: ternary_operator_mux.v**
+    **Example 1: ternary_operator_mux.v**<br>
     ```verilog
     module ternary_operator_mux (input i0 , input i1 , input sel , output y);
 	      assign y = sel?i1:i0;
 	  endmodule
     ```
-    **Explaination**
-    <condition>(`?`)<true>(`:`)<false>
+    **Explaination**<br>
+    `condition(`?`)true(`:`)false`
 
-    **RTL Simulation**
+    **RTL Simulation**<br>
     <img width="1287" alt="Screenshot 2024-10-24 at 5 12 14 PM" src="https://github.com/user-attachments/assets/d03011c5-02ba-4ca0-ba47-1d59efb43a97">
 
-    **Synthesis**
+    **Synthesis**<br>
     <img width="297" alt="Screenshot 2024-10-24 at 5 13 58 PM" src="https://github.com/user-attachments/assets/978035db-e148-4d13-9591-a7bd623be3af">
 
-    **Output**
+    **Output**<br>
     <img width="781" alt="Screenshot 2024-10-24 at 5 24 11 PM" src="https://github.com/user-attachments/assets/fe42792e-ba6f-4599-b2fe-5ba94c59e830">
 
-    **GLS Output**
-    
+    **GLS Output**<br>
+    <img width="1287" alt="Screenshot 2024-10-24 at 5 29 28 PM" src="https://github.com/user-attachments/assets/86ada8d9-1644-406e-9eef-f7a579f1b0ff">
 
+    **Example 2: bad_mux.v**<br>
+    ```verilog
+    module bad_mux (input i0 , input i1 , input sel , output reg y);
+	always @ (sel)
+	begin
+		if(sel)
+			y <= i1;
+		else 
+			y <= i0;
+	end
+	endmodule
+    ```
+    **Explaination**<br>
+    Here, the changes in (`sel`) is assigned to (`y`) but the changes in (`i0`) and (`i1`) is not reflected in (`y`)
 
+    **RTL Simulation**<br>
+	<img width="1287" alt="Screenshot 2024-10-24 at 5 51 10 PM" src="https://github.com/user-attachments/assets/0eeb0fe7-707f-405b-a652-ddffff6216ae">
 
+    **Synthesis**<br>
+    <img width="307" alt="Screenshot 2024-10-24 at 5 51 57 PM" src="https://github.com/user-attachments/assets/fdb4763d-d9e2-4140-aa92-72df47291182">
+
+    **Output**<br>
+    <img width="832" alt="Screenshot 2024-10-24 at 5 53 10 PM" src="https://github.com/user-attachments/assets/05994e96-18d1-40f2-b8ca-27a629c1f73d">
+
+    **GLS Output**<br>
+    <img width="1287" alt="Screenshot 2024-10-24 at 5 55 26 PM" src="https://github.com/user-attachments/assets/edebea18-a033-4811-8c2e-b24f40f543b7">
 
 </details>
 
@@ -230,6 +254,34 @@ On Day 4, I focused on Gate-Level Simulation (GLS), the differences between bloc
   ### Lab Synth Sim Mismatch Blocking Statement 
   - Focused on identifying issues caused by blocking statements in synthesized designs.
   - Ran simulations to observe incorrect behavior due to blocking statements.
+    
+    **Example 1: blocking_caveat**<br>
+    ```verilog
+    module blocking_caveat (input a , input b , input  c, output reg d); 
+	reg x;
+	always @ (*)
+	begin
+		d = x & c;
+		x = a | b;
+	end
+	endmodule
+	```
+    **Explaination**<br>
+	Here, result of `x & c` is stored in `d` but the register x it hold the previous data, later the result of `a | b` is stored in x.
+
+    **RTL Simulation**<br>
+	<img width="1286" alt="Screenshot 2024-10-24 at 6 06 20 PM" src="https://github.com/user-attachments/assets/a490069e-c155-484b-97a9-2bbf11c46642">
+
+    **Synthesis**<br>
+	<img width="306" alt="Screenshot 2024-10-24 at 6 07 21 PM" src="https://github.com/user-attachments/assets/0d019deb-466e-4a55-9ed3-18980106c924">
+
+    **Output**<br>
+	<img width="820" alt="Screenshot 2024-10-24 at 6 09 07 PM" src="https://github.com/user-attachments/assets/8d2ff7fa-d1ee-46de-b3ef-a596e4ca383e">
+
+    **GLS Output**<br>
+	<img width="1286" alt="Screenshot 2024-10-24 at 6 11 00 PM" src="https://github.com/user-attachments/assets/40fd4db0-2768-4256-972e-ce4f8857fed7">
+
+
 
 </details>
 
