@@ -41,6 +41,8 @@ On Day 1, the focus was on Verilog RTL design and synthesis using tools like Ive
      ![GTKWave Visualization](https://github.com/user-attachments/assets/475d843e-b965-4af9-a84b-c81a4ed22ae8)
 </details>
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <details>
     <summary>3. Introduction to Yosys and Logic Synthesis</summary>
 
@@ -79,7 +81,7 @@ On Day 1, the focus was on Verilog RTL design and synthesis using tools like Ive
    
 </details>
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 <details>
