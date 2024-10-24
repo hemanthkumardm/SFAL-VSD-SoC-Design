@@ -220,6 +220,7 @@ endmodule
     endmodule
     ```
     <br>
+    
     ![WhatsApp Image 2024-10-24 at 13 38 58](https://github.com/user-attachments/assets/787894a5-ab87-402e-afe9-67982b078b13)
     
     **Synthesis**<br>
@@ -245,7 +246,8 @@ endmodule
 	assign y = a * 9;
     endmodule
     ```
-    <br>
+    <br>'
+    
     ![WhatsApp Image 2024-10-24 at 13 58 25](https://github.com/user-attachments/assets/74e57bd6-70c4-4e60-9c03-a1764dfc7a0c)
 
     **Synthesis**<br>
