@@ -1,5 +1,3 @@
-Here’s the corrected syntax for your README.md:
-
 # Day 2 - Timing Libraries, Hierarchical vs Flat Synthesis, and Efficient Flop Coding Styles
 
 ## Overview:
@@ -214,6 +212,63 @@ endmodule
 
   ### Interesting Optimizations
   - Applied optimizations to the flop designs to reduce area and improve performance.
+    
+    **Mult_2.v**
+    ```verilog
+    module mul2 (input [2:0] a, output [3:0] y);
+		assign y = a * 2;
+    endmodule
+    ```
+    <br>
+    ![WhatsApp Image 2024-10-24 at 13 38 58](https://github.com/user-attachments/assets/787894a5-ab87-402e-afe9-67982b078b13)
+    
+    **Synthesis**<br>
+    <img width="325" alt="Screenshot 2024-10-24 at 1 44 02 PM" src="https://github.com/user-attachments/assets/cefce0e2-fd98-4243-ac3a-691f71cf5397">
+
+    **Output**<br>
+    <img width="741" alt="Screenshot 2024-10-24 at 1 42 52 PM" src="https://github.com/user-attachments/assets/1b83903d-204a-4aa3-a738-6f0f88201afa">
+    
+    **Netlist**<br>
+    ```verilog
+    module mul2(a, y);
+  		input [2:0] a;
+  		wire [2:0] a;
+  		output [3:0] y;
+  		wire [3:0] y;
+  		assign y = { a, 1'h0 };
+    endmodule
+    ```
+    
+    **Mult_8.v**<br>
+    ```verilog
+    module mul8 (input [2:0] a, output [5:0] y);
+	assign y = a * 9;
+    endmodule
+    ```
+    <br>
+    ![WhatsApp Image 2024-10-24 at 13 58 25](https://github.com/user-attachments/assets/74e57bd6-70c4-4e60-9c03-a1764dfc7a0c)
+
+    **Synthesis**<br>
+    <img width="393" alt="Screenshot 2024-10-24 at 1 59 42 PM" src="https://github.com/user-attachments/assets/45b4bdb0-593e-4f76-a0be-1d4f53dab8ca">
+
+    **Output**<br>
+    <img width="927" alt="Screenshot 2024-10-24 at 2 00 09 PM" src="https://github.com/user-attachments/assets/e72bdaa7-184f-463d-bbd7-5e4aae01ee1a">
+    
+    **Netlist**<br>
+    ```verilog
+    module mult8(a, y);
+  		input [2:0] a;
+ 		wire [2:0] a;
+  		output [5:0] y;
+  		wire [5:0] y;
+  		assign y = { a, a };
+    endmodule
+    ```
+
+    
+
+    
+
     
 
 
