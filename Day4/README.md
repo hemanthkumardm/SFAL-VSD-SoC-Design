@@ -9,6 +9,21 @@ On Day 4, I focused on Gate-Level Simulation (GLS), the differences between bloc
   ### GLS Concepts and Flow Using Iverilog
   - Studied the purpose and process of Gate-Level Simulation using the Iverilog simulator.
   - Understood the flow of GLS and how it helps in verifying the design after synthesis.
+    #### What is GLS?
+    
+    Running the test bench with netlist as Design under test.
+
+    #### Why GLS?
+
+    - verifying the logical correctness of design after synthesis
+    - Ensuring the timing of the design
+    - GLS needs to be run with delay annotation
+   
+    #### GLS using iverilog
+    <img width="926" alt="Screenshot 2024-10-24 at 3 30 20 PM" src="https://github.com/user-attachments/assets/5cf4687d-89c8-4202-abca-c7952388d4df">
+    
+    > **Note:** If the gate level models are delay annoted, then we can use for timing validation.
+
   
 
   ### Synthesis-Simulation Mismatch
