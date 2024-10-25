@@ -146,11 +146,10 @@ On Day 4, I focused on Gate-Level Simulation (GLS), the differences between bloc
 
     **Expected Output**
 <img width="422" alt="Screenshot 2024-10-24 at 4 04 53 PM" src="https://github.com/user-attachments/assets/10fdc124-4be5-4679-b160-e02cb3a3a557">
-
     **Original Output**
     <img width="286" alt="Screenshot 2024-10-24 at 4 06 24 PM" src="https://github.com/user-attachments/assets/006d7e8d-ed58-480f-bd79-40cdc029bfff">
-
-    > **Note:** Use Non-blocking assignments while writing sequential circuits.
+    
+      > **Note:** Use Non-blocking assignments while writing sequential circuits.
 
 
   ### Caveats with Blocking Statements
