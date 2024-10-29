@@ -64,6 +64,8 @@
     
 </details>
 
+----
+
 <details>
   <summary>Input Transition & Output Load</summary>
   
@@ -109,6 +111,8 @@
   <img width="1018" alt="Screenshot 2024-10-27 at 9 48 12 PM" src="https://github.com/user-attachments/assets/296a36e5-d8ae-4dda-8663-0f83af3cf68b">
 
 </details>
+
+----
 
 <details>
   <summary>Lab6 - Exploring dotLib</summary>
@@ -171,13 +175,6 @@
 
     `list_attributes -app`
     <img width="1123" alt="Screenshot 2024-10-27 at 10 36 03 PM" src="https://github.com/user-attachments/assets/637c738d-af06-4636-9165-616119bfd783">
-
-
-
-
-
-    
-
 
   
 </details>
