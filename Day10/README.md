@@ -3,12 +3,10 @@
 ### Problem Statement
 This project delves into designing a compact, open-source **System on Chip (SoC)** based on **RVMYTH**, a RISC-V-based processor core. The SoC integrates a **Phase-Locked Loop (PLL)** for precise clock generation and control, alongside a **10-bit Digital-to-Analog Converter (DAC)** for interfacing with external analog systems. By converting digital signals into analog, this DAC allows BabySoC to communicate with devices that accept analog inputs, such as televisions and mobile phones, enabling output in the form of audio or video. Ultimately, this Sky130-technology-based SoC aims to provide a highly documented, educational platform for learning and experimentation in digital-analog interfacing.
 
-## Learning Objectives
-
 <details>
-## Understanding System on a Chip (SoC)
+<summary>1. Understanding System on a Chip (SoC)</summary>
 
-A **System on a Chip (SoC)** is like a mini-computer built on a single chip. Instead of needing separate parts for each function, an SoC combines everything into one small package. This makes it especially useful for devices where space, power, and efficiency are important, like smartphones, smartwatches, and tablets. Let's break down what an SoC includes and why it's essential:
+   A **System on a Chip (SoC)** is like a mini-computer built on a single chip. Instead of needing separate parts for each function, an SoC combines everything into one small package. This makes it especially useful for devices where space, power, and efficiency are important, like smartphones, smartwatches, and tablets. Let's break down what an SoC includes and why it's essential:
 
 ### Key Parts of an SoC
 
@@ -67,31 +65,33 @@ A **System on a Chip (SoC)** is like a mini-computer built on a single chip. Ins
 - **Complex Design**: Creating an SoC is complicated. Combining multiple functions in one small space requires advanced design skills.
 - **Heat Issues**: Packing many components together can lead to overheating. SoCs need cooling solutions to work well over time.
 - **Less Flexibility**: Once an SoC is designed, it’s hard to change. This is because each SoC is built for specific tasks or devices.
+  ![Apple-M1-Architecture-1024x475](https://github.com/user-attachments/assets/a3428bc5-1ddd-4bdc-b3a6-10a74205c8d8)
+
 
 ---
 
-In summary, **System on a Chip (SoC)** technology allows us to create powerful, efficient, and compact devices by combining multiple components into one chip. This is why your phone, smartwatch, and even some household appliances can do so much in such a small package.
+In summary, **System on a Chip (SoC)** technology allows us to create powerful, efficient, and compact devices by combining multiple components into one chip. This is why our phone, smartwatch, and even some household appliances can do so much in such a small package.
 </details>
 
 <details>
 <summary>2. Types of SoCs</summary>
 
-   - **Microcontroller-based SoC**: This type of SoC centers around a microcontroller, which is a small computing device designed for controlling specific tasks in embedded applications. These SoCs are optimized for low power consumption and are used in devices where computational needs are relatively modest, such as home appliances, automotive systems, and IoT devices. They are cost-effective solutions for handling specific, repetitive tasks with limited resource requirements.
+   - **Microcontroller-based SoC**: These SoCs are built around a microcontroller, designed for simple control tasks in everyday devices. Known for their low power usage and efficiency, they’re perfect for applications like home appliances, car systems, and IoT devices, where processing needs are minimal, and power savings are essential.
 
-   - **Microprocessor-based SoC**: A microprocessor-based SoC uses a more advanced processing unit (compared to microcontrollers) to handle complex computations and multitasking. These SoCs are commonly found in applications that require higher processing power, such as smartphones, tablets, and high-performance embedded systems. They can run full-scale operating systems and support diverse applications, making them versatile for tasks that demand more extensive computational capabilities.
+   - **Microprocessor-based SoC**: This type features a microprocessor, which can handle more demanding tasks and run operating systems. Commonly used in smartphones and tablets, microprocessor-based SoCs manage multiple tasks and support complex applications, providing the higher processing power necessary for interactive and data-intensive applications.
 
-   - **Application-Specific SoC**: These SoCs are tailored for specific applications that require optimized performance beyond general-purpose microcontrollers or microprocessors. Examples include SoCs used in graphics processing, network devices, and high-performance multimedia applications. By designing the architecture specifically for a particular use case, these SoCs achieve enhanced efficiency and speed, ideal for tasks like video processing, AI acceleration, and high-frequency trading.
+   - **Application-Specific SoC**: Custom-designed for specific, high-performance tasks, these SoCs excel in areas like graphics processing, network management, and multimedia applications. Optimized for speed and efficiency in their designated roles, they’re often used in graphics cards, AI hardware, and specialized industrial or financial systems that require precise, fast processing.
 
 </details>
 
 <details>
 <summary>3. BabySoC Components</summary>
 
-   - **RVMYTH (RISC-V Based CPU)**: RVMYTH serves as the core processing unit of BabySoC. Built on the open-source RISC-V architecture, RVMYTH provides a modular and customizable CPU that can handle essential processing tasks within the SoC. RISC-V's simplicity and flexibility make it well-suited for educational purposes, allowing developers to study and modify its architecture easily. In BabySoC, RVMYTH coordinates data processing and communication with other components, especially the DAC.
+   - **RVMYTH (RISC-V CPU)**: RVMYTH is the brain of BabySoC, based on the open-source RISC-V design. It's a simple, customizable CPU that handles processing tasks and communicates with other parts of the SoC. This flexibility makes RVMYTH ideal for learning and experimenting with CPU architecture.
 
-   - **Phase-Locked Loop (PLL)**: The PLL is a control system that locks the output frequency of the SoC’s clock signal to a reference input frequency. PLLs are essential in modern electronics, as they ensure synchronization across various system parts by generating stable and accurate clock signals. In BabySoC, the PLL plays a vital role in clock distribution, ensuring that RVMYTH and DAC operate in sync. PLLs are widely used in clock generation, modulation, and data recovery in communication systems, making them integral to achieving reliable operation.
+   - **Phase-Locked Loop (PLL)**: The PLL generates a stable clock signal to keep everything in BabySoC running in sync. It matches the SoC's clock with a reference frequency, ensuring reliable timing for RVMYTH and DAC. PLLs are widely used to keep signals aligned in communication and timing circuits.
 
-   - **Digital-to-Analog Converter (DAC)**: The DAC converts digital data processed by RVMYTH into an analog signal that external devices can understand. In BabySoC, the 10-bit DAC transforms the digital values stored in RVMYTH's registers into analog outputs that can drive audio or video displays. DACs are critical in systems that interact with the physical world, such as audio-visual equipment and communications hardware, as they enable the seamless transfer of digital information to analog environments.
+   - **Digital-to-Analog Converter (DAC)**: The DAC turns digital signals from RVMYTH into analog output, like sound or video. This allows BabySoC to connect with external devices that use analog signals, such as speakers or displays.
 
 </details>
 
