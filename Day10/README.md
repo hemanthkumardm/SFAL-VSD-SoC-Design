@@ -82,6 +82,10 @@ In summary, **System on a Chip (SoC)** technology allows us to create powerful, 
 
    - **Application-Specific SoC**: Custom-designed for specific, high-performance tasks, these SoCs excel in areas like graphics processing, network management, and multimedia applications. Optimized for speed and efficiency in their designated roles, they’re often used in graphics cards, AI hardware, and specialized industrial or financial systems that require precise, fast processing.
 
+    ### SoC Design Flow
+    ![img_61d89021d8d47](https://github.com/user-attachments/assets/c33fb973-b044-48db-b20b-c3fc9d7da47a)
+
+
 </details>
 
 <details>
