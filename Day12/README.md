@@ -37,8 +37,17 @@ Gate-level simulation (GLS) checks both functionality and timing of the design a
 We need `.db` files for `avsddac`, `avsdpll`, and `sky130_fd_sc_hd__tt_025C_1v80` libraries. Follow these steps:
 
 ### Converting `avsddac.lib` to `avsddac.db`
-```bash
-cd /home/bhaskar/vsd/VSDBabySOC/VSDBabySoC/src/lib
-lc_shell
-read_lib avsddac.lib
+`cd Desktop/hemanth/VLSI/VSDBabySOC/src/lib/`
+<img width="739" alt="Screenshot 2024-11-08 at 12 12 58 PM" src="https://github.com/user-attachments/assets/6257df5a-5775-45dc-adc9-9d49a949f917">
+
+Launch `lc_shell`
+<img width="736" alt="Screenshot 2024-11-08 at 12 13 45 PM" src="https://github.com/user-attachments/assets/1ded9195-26bc-46f6-bab3-b68618b7fde3">
+
+Reading avsddac library `read_lib avsddac.lib`
+
+
 write_lib avsddac -format db -output avsddac.db
+<img width="881" alt="Screenshot 2024-11-08 at 12 24 58 PM" src="https://github.com/user-attachments/assets/3a41681b-6dc7-4764-a3f1-ceedd29608a1">
+
+
+
