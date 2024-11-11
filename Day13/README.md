@@ -715,7 +715,98 @@ To verify robustness, the following corners were chosen:
 
 ---
 
-### 
+### Common Errors and Debugging Tips
+
+### 1. `Error: unknown option '-library'`
+- **Cause**: Incorrect usage of the `compile` command.
+- **Solution**: Remove the `-library` option. Use the correct syntax:
+    ```bash
+    compile -map_effort high
+    ```
+- **Note**: Make sure the library paths are set correctly in the design environment.
+
+### 2. `Error: Width mismatch on port 'OUT'`
+- **Cause**: The output width in the module instantiation does not match the declared width in the module.
+- **Solution**: Ensure the width matches across all module definitions. Example:
+    ```verilog
+    output wire [31:0] OUT  // Match with module instantiation
+    ```
+- **Debugging Tip**: Check module declarations and parameterize widths when possible.
+
+### 3. `Error: real declarations are not supported by synthesis`
+- **Cause**: Real data types are unsupported in synthesis as they are used for simulation.
+- **Solution**: Replace `real` data types with fixed-point approximations or integer types if precise decimal representation is unnecessary.
+- **Example Replacement**:
+    ```verilog
+    integer VREFH_scaled;  // Replace real type with scaled integer
+    ```
+
+### 4. `Warning: Statement unreachable`
+- **Cause**: Condition in the code prevents certain statements from executing.
+- **Solution**: Review conditional expressions and check for conflicts. For example:
+    ```verilog
+    if (EN == 1'b1) begin
+       OUT <= VREFL + ((Dext * (VREFH - VREFL)) / 1023);
+    end
+    ```
+
+### 5. `Error: could not open script file "pvt_corners.sh"`
+- **Cause**: The script file does not exist in the specified directory.
+- **Solution**: Verify the file path or create the `pvt_corners.sh` script in the working directory.
+    ```bash
+    source /path/to/pvt_corners.sh
+    ```
+
+---
+
+## SDC Constraints
+
+To ensure the design meets timing requirements, use Synopsys Design Constraints (SDC) effectively:
+
+1. **Define Clock Constraints**:
+    ```tcl
+    create_clock -period 10 [get_ports clk]
+    ```
+2. **Set Input and Output Delays**:
+    ```tcl
+    set_input_delay 2.5 -clock clk [all_inputs]
+    set_output_delay 2.5 -clock clk [all_outputs]
+    ```
+3. **Timing Exceptions**:
+    ```tcl
+    set_false_path -from [get_ports reset]
+    set_multicycle_path -setup 2 -from [get_ports data_in]
+    ```
+
+*Debugging Tip*: Use `report_timing` to validate that constraints are correctly applied.
+
+---
+
+## PVT Corners
+
+To account for variations in Process, Voltage, and Temperature (PVT), create libraries for each PVT condition:
+
+1. **Setting Up PVT Corners**:
+    - Common corners include typical, worst, and best cases.
+    - Example naming convention:
+        - `sky130_fd_sc_hd__tt_025C_1v80.db` (Typical)
+        - `sky130_fd_sc_hd__ff_100C_1v95.db` (Fast)
+        - `sky130_fd_sc_hd__ss_0C_1v60.db` (Slow)
+
+2. **Specifying Corner Libraries in Synopsys**:
+    ```bash
+    set target_library "<path_to_library>/sky130_fd_sc_hd__tt_025C_1v80.db"
+    ```
+
+3. **Using PVT Corner Shell Script**:
+    ```bash
+    source pvt_corners.sh
+    ```
+
+*Debugging Tip*: Verify library paths and files with `check_library`.
+
+---
+
 
 
 
