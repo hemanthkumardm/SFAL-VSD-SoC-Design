@@ -1,10 +1,8 @@
 # Day 15 - Good Floorplan vs Bad Floorplan and Introduction to Library Cells
 
 ---
-
-## 1. Chip Floor Planning Considerations
 <details>
-  <summary>Click to Expand</summary>
+  <summary>Chip Floor Planning Considerations</summary>
 
 ### Key Considerations
 1. **Macro Placement**:
@@ -25,9 +23,8 @@
 
 ---
 
-## 2. Library Binding and Placement
 <details>
-  <summary>Click to Expand</summary>
+  <summary>Library Binding and Placement</summary>
 
 ### Library Binding
 - The process of linking RTL (Register Transfer Level) code to specific standard cells in the library.
@@ -47,9 +44,8 @@
 
 ---
 
-## 3. Cell Design and Characterization Flows
 <details>
-  <summary>Click to Expand</summary>
+  <summary>Cell Design and Characterization Flows</summary>
 
 ### Design Flow
 1. **Design Entry**: Define the cell's functionality using Verilog or VHDL.
@@ -68,9 +64,8 @@
 
 ---
 
-## 4. General Timing Characterization Parameters
 <details>
-  <summary>Click to Expand</summary>
+  <summary>General Timing Characterization Parameters</summary>
 
 ### Key Parameters
 - **Setup Time**:
