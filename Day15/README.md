@@ -276,11 +276,18 @@ In this section, we explore the problem of current demand and how power planning
 
 We start by considering a circuit where each element requires current. A decoupling capacitor is typically used to supply this current during switching activities. However, when multiple instances of a macro are repeated across the chip, this creates a larger current demand for each element within the circuit. 
 
+<img width="353" alt="Screenshot 2024-11-19 at 7 12 38 PM" src="https://github.com/user-attachments/assets/2203f98f-bed0-45a6-b25a-1eaf9dceab52">
+
 For instance, assume we have a macro repeated four times on the chip. Each of these blocks will need to tap into the power supply to maintain the signal integrity when logic transitions occur.
+
+<img width="634" alt="Screenshot 2024-11-19 at 7 13 35 PM" src="https://github.com/user-attachments/assets/996a15c8-5ea6-4959-aa92-3365184fe3b7">
+
 
 ### Signal Integrity and Power Supply Challenges
 
 When a signal transitions from logic 0 to logic 1 (or vice versa), the entire signal line must maintain its integrity to ensure that the load receives the same shape of the signal. This signal line is typically connected to a power supply, which provides the necessary current. However, if the distance between the signal line and the power supply is too long, the signal might suffer from **voltage drops** due to the resistance of the connecting lines.
+
+<img width="698" alt="Screenshot 2024-11-19 at 7 14 02 PM" src="https://github.com/user-attachments/assets/a009e2bc-84bb-43e9-a136-5db3d4bfc8fc">
 
 #### Voltage Drop Scenario
 
@@ -296,6 +303,8 @@ Consider the example of a 16-bit bus:
 
 The voltage droop occurs because a single power supply is expected to meet the demands of all blocks at once. If the power supply is too far away or cannot provide enough current, the voltage on the signal line might drop below the required level. This can result in improper logic levels being received by the load, leading to potential errors or undefined behavior.
 
+<img width="692" alt="Screenshot 2024-11-19 at 7 14 16 PM" src="https://github.com/user-attachments/assets/5c44384a-0afe-4ae8-9dd5-7d33af6e486d">
+
 ### Solution: Multiple Power Supplies
 
 To address this problem, **multiple power supplies** are introduced across the chip. Instead of relying on a single power source, power is supplied to each block from its nearest power supply pin. This approach helps to minimize voltage drops by distributing the current demand across multiple power sources, ensuring that each block gets the power it needs without causing significant voltage droop.
@@ -308,6 +317,8 @@ To address this problem, **multiple power supplies** are introduced across the c
 
 ### Power Planning Strategy
 
+<img width="658" alt="Screenshot 2024-11-19 at 7 14 36 PM" src="https://github.com/user-attachments/assets/fddf3574-b015-4f22-8f28-56d1ed3ce482">
+
 In modern chip designs, the power supply layout involves carefully planning the **VDD** (power) and **VSS** (ground) lines. These lines are distributed across the chip in a grid-like pattern to ensure that power is available as close as possible to each logic block. 
 
 #### Key Points in Power Planning:
@@ -315,6 +326,51 @@ In modern chip designs, the power supply layout involves carefully planning the 
 - **Multiple Power Lines**: A combination of vertical and horizontal VDD/VSS lines are laid out to ensure uniform power distribution across the chip.
 - **Decoupling Capacitors**: Capacitors are strategically placed near the critical logic blocks to provide additional current during switching activities.
 - **Power Supply Proximity**: Each logic block should have access to the nearest power supply to minimize the impact of voltage drops and ensure reliable signal integrity.
+
+<img width="845" alt="Screenshot 2024-11-19 at 7 14 56 PM" src="https://github.com/user-attachments/assets/d21f53ee-1dfb-463b-a87a-415c684fb025">
+
+---
+
+## Pin placement and logical cell placement blockage
+
+<img width="672" alt="Screenshot 2024-11-19 at 7 16 06 PM" src="https://github.com/user-attachments/assets/f6e1dc60-9ccd-44cc-8fae-59e11b0e83bd">
+
+<img width="667" alt="Screenshot 2024-11-19 at 7 16 38 PM" src="https://github.com/user-attachments/assets/4ce9dba5-547f-4d02-83e9-a63f187bc01c">
+
+<img width="701" alt="Screenshot 2024-11-19 at 7 17 08 PM" src="https://github.com/user-attachments/assets/b07bf015-db73-4082-acf8-caece502a094">
+
+<img width="845" alt="Screenshot 2024-11-19 at 7 17 30 PM" src="https://github.com/user-attachments/assets/93526dc0-07bd-4718-95d5-7331fde327d4">
+
+---
+
+## Steps to run floorplan using OpenLane
+
+`run_floorplan`
+
+.def (design exchange format) file in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/<recent_run>/results/floorplans`
+`less picorv32a.floorplan.def`
+
+<img width="440" alt="Screenshot 2024-11-19 at 7 29 29 PM" src="https://github.com/user-attachments/assets/c9063ed4-a611-4214-94db-604cce1833d9">
+
+`magic -T /Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def`
+
+<img width="682" alt="Screenshot 2024-11-19 at 7 31 58 PM" src="https://github.com/user-attachments/assets/5fb5f6bc-be8f-4011-965a-5a03384d1eef">
+
+---
+
+## keys to use in magic
+
+`s` -> select
+`v` -> fit layout on screen
+`left mouse, right mouse` -> select
+`z` -> zoom
+arrow keys -> move layout
+
+<img width="1012" alt="Screenshot 2024-11-19 at 7 34 29 PM" src="https://github.com/user-attachments/assets/1e69dba8-a58b-4ae7-9329-f1a65f53ba6d">
+
+`what` in tcon window for information about selected cell
+
+<img width="1120" alt="Screenshot 2024-11-19 at 7 34 53 PM" src="https://github.com/user-attachments/assets/1bf90819-e6b3-4451-8e5d-60e199d98a5a">
 
 </details>
 
@@ -337,6 +393,68 @@ In modern chip designs, the power supply layout involves carefully planning the 
 - **Yosys**: For synthesis.
 - **OpenROAD**: For placement and routing.
 
+---
+
+## Placement and routing
+
+**Step 1**: Bind netlist with physical cells
+
+<img width="899" alt="Screenshot 2024-11-19 at 7 38 24 PM" src="https://github.com/user-attachments/assets/3a7e37db-21f6-4385-b090-9fc401e4c5d0">
+
+<img width="1175" alt="Screenshot 2024-11-19 at 7 38 50 PM" src="https://github.com/user-attachments/assets/c5b5b231-2a70-4116-b710-1ce6b193e4b8">
+
+<img width="1141" alt="Screenshot 2024-11-19 at 7 39 03 PM" src="https://github.com/user-attachments/assets/f129c751-5c0a-4118-8802-0b8352ecea1b">
+
+### Library
+
+<img width="357" alt="Screenshot 2024-11-19 at 7 39 14 PM" src="https://github.com/user-attachments/assets/335cb3f3-79f7-4fb3-a088-b808887b89d2">
+
+### Various flavours of cells in library
+
+<img width="1390" alt="Screenshot 2024-11-19 at 7 39 49 PM" src="https://github.com/user-attachments/assets/c42639f1-2f32-49e8-879b-5b572547961d">
+
+---
+
+**Step 2**: Placement
+
+<img width="1440" alt="Screenshot 2024-11-19 at 7 40 56 PM" src="https://github.com/user-attachments/assets/3b47a7ce-2830-474c-8612-c2d97bb73aee">
+
+<img width="1438" alt="Screenshot 2024-11-19 at 7 41 28 PM" src="https://github.com/user-attachments/assets/e86cc734-9835-4651-9d84-3616331050e6">
+
+<img width="846" alt="Screenshot 2024-11-19 at 7 42 24 PM" src="https://github.com/user-attachments/assets/b5af4523-f819-4de0-a756-ed2c1da6362a">
+
+---
+
+**Step 2**: Optimize Placement
+
+<img width="1440" alt="Screenshot 2024-11-19 at 7 43 12 PM" src="https://github.com/user-attachments/assets/1a750100-6b22-4102-b085-6b62b5293237">
+
+<img width="1440" alt="Screenshot 2024-11-19 at 7 43 46 PM" src="https://github.com/user-attachments/assets/4a89c400-48f3-4e15-826d-1b48d688b700">
+
+---
+
+## Library characterization and modelling
+
+<img width="1440" alt="Screenshot 2024-11-19 at 7 45 52 PM" src="https://github.com/user-attachments/assets/c2f827b7-7b4a-4369-ae13-183605019c92">
+
+<img width="859" alt="Screenshot 2024-11-19 at 7 46 13 PM" src="https://github.com/user-attachments/assets/07619b60-0561-43e6-8b96-049302d0da0a">
+
+<img width="1120" alt="Screenshot 2024-11-19 at 7 46 53 PM" src="https://github.com/user-attachments/assets/05b9dbc8-e6ce-459a-8979-7a82d8459ece">
+
+---
+
+## Run placement
+
+`run_placement`
+
+<img width="812" alt="Screenshot 2024-11-19 at 7 48 10 PM" src="https://github.com/user-attachments/assets/3fd9fe4d-bec9-42f1-b7cc-e45250fa7e8f">
+
+`/Desktop/work/tools/openlane_working dir/openlane/designs/picorv32a/runs/<recent_run>/results/placements/`
+`magic -T /home/nickson/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs. tech/magic/sky130A.tech lef read ../../tmp/merged. lef def read picorv32a.placement.def`
+
+<img width="1173" alt="Screenshot 2024-11-19 at 7 50 11 PM" src="https://github.com/user-attachments/assets/3097a543-e8aa-4d17-acaa-2e25b113eb03">
+
+---
 
 </details>
 
@@ -358,6 +476,56 @@ In modern chip designs, the power supply layout involves carefully planning the 
 3. **Integration**:
    - Add the characterized cell to the standard cell library.
 
+---
+
+## cell design flow
+
+**Inputs**
+
+<img width="845" alt="Screenshot 2024-11-19 at 7 51 54 PM" src="https://github.com/user-attachments/assets/5fc718a5-ea71-4021-846b-a4c45035f521">
+
+<img width="844" alt="Screenshot 2024-11-19 at 7 52 21 PM" src="https://github.com/user-attachments/assets/b7793e62-0e8b-4df1-9ac6-66d13b648961">
+
+<img width="846" alt="Screenshot 2024-11-19 at 7 53 04 PM" src="https://github.com/user-attachments/assets/d9d88ffa-ad91-4216-a236-4ac06e9bd0c7">
+
+<img width="844" alt="Screenshot 2024-11-19 at 7 53 22 PM" src="https://github.com/user-attachments/assets/d54fd5a0-4109-439c-9956-60c6e49a0908">
+
+<img width="843" alt="Screenshot 2024-11-19 at 7 53 57 PM" src="https://github.com/user-attachments/assets/cc04aeb3-22ec-49e4-b7da-3c70b3417e0a">
+
+<img width="844" alt="Screenshot 2024-11-19 at 7 54 22 PM" src="https://github.com/user-attachments/assets/f05c43a6-4746-4efd-b683-97c1ca03f48a">
+
+<img width="790" alt="Screenshot 2024-11-19 at 7 54 34 PM" src="https://github.com/user-attachments/assets/ee07782a-0e97-4c87-9462-484ffa39413c">
+
+<img width="755" alt="Screenshot 2024-11-19 at 7 54 44 PM" src="https://github.com/user-attachments/assets/4ec85959-212d-46ff-881c-23a15093fb9e">
+
+## Design steps
+
+<img width="814" alt="Screenshot 2024-11-19 at 7 55 10 PM" src="https://github.com/user-attachments/assets/78b8d2d4-eaa1-45a3-954e-de5956e18192">
+
+## outputs
+
+<img width="782" alt="Screenshot 2024-11-19 at 7 57 18 PM" src="https://github.com/user-attachments/assets/c110fe40-81e0-493f-8b1c-067768955ec5">
+
+## Characterization
+
+### Buffer layout
+
+<img width="265" alt="Screenshot 2024-11-19 at 7 58 33 PM" src="https://github.com/user-attachments/assets/238623ef-c458-44ce-b247-7b92b620abd7">
+
+### Description of buffer
+
+<img width="729" alt="Screenshot 2024-11-19 at 7 59 29 PM" src="https://github.com/user-attachments/assets/e96c1a1a-cece-4861-84f0-e5fb370acea6">
+
+### spice extracted netlist
+
+<img width="240" alt="Screenshot 2024-11-19 at 8 00 06 PM" src="https://github.com/user-attachments/assets/06d9df52-2be8-4355-b61b-1b146843db85">
+
+<img width="846" alt="Screenshot 2024-11-19 at 8 01 36 PM" src="https://github.com/user-attachments/assets/ff15de89-b318-4c95-a6d2-b2247690f219">
+
+<img width="803" alt="Screenshot 2024-11-19 at 8 02 21 PM" src="https://github.com/user-attachments/assets/f61bfad0-5320-4711-8925-33b63a332cad">
+
+---
+
 </details>
 
 ---
@@ -374,9 +542,23 @@ In modern chip designs, the power supply layout involves carefully planning the 
   - Time taken for a signal to travel from input to output.
 - **Clock Skew**:
   - Difference in clock arrival times across the chip.
+ 
+ ---
 
-### Importance
-- Helps in meeting timing constraints for synchronous designs.
-- Ensures reliability and performance of the design under different conditions.
+## Timing characterization
+
+<img width="843" alt="Screenshot 2024-11-19 at 8 03 35 PM" src="https://github.com/user-attachments/assets/1424eb03-e075-4975-903a-20f23cbe0467">
+
+## Proportional delay
+
+<img width="766" alt="Screenshot 2024-11-19 at 8 04 20 PM" src="https://github.com/user-attachments/assets/0209e05c-46fa-4ec7-a1a1-c6f4700b67ab">
+
+<img width="753" alt="Screenshot 2024-11-19 at 8 04 48 PM" src="https://github.com/user-attachments/assets/c2bdee9e-3d55-4d0f-828a-5be0c893d3e4">
+
+<img width="237" alt="Screenshot 2024-11-19 at 8 04 59 PM" src="https://github.com/user-attachments/assets/11a90d06-6f6b-4cf6-8187-542d14141ebf">
+
+<img width="774" alt="Screenshot 2024-11-19 at 8 05 14 PM" src="https://github.com/user-attachments/assets/b43c3e5a-a6b4-46cd-a135-f0fbc614ee62">
+
+---
 
 </details>
