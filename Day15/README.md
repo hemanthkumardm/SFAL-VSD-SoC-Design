@@ -26,3 +26,20 @@ arrow keys -> move layout
 `what` in tcon window for information about selected cell
 
 <img width="1120" alt="Screenshot 2024-11-19 at 7 34 53 PM" src="https://github.com/user-attachments/assets/1bf90819-e6b3-4451-8e5d-60e199d98a5a">
+
+---
+
+## Run placement
+
+`run_placement`
+
+[image_here]
+
+```
+/Desktop/work/tools/openlane_working dir/openlane/designs/picorv32a/runs/<recent_run>/results/placements/
+`magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs. tech/magic/sky130A.tech lef read ../../tmp/merged. lef def read picorv32a.placement.def
+```
+
+[image_here]
+
+---
