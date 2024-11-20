@@ -414,19 +414,6 @@ In modern chip designs, the power supply layout involves carefully planning the 
 
 ---
 
-## Run placement
-
-`run_placement`
-
-<img width="812" alt="Screenshot 2024-11-19 at 7 48 10 PM" src="https://github.com/user-attachments/assets/3fd9fe4d-bec9-42f1-b7cc-e45250fa7e8f">
-
-`/Desktop/work/tools/openlane_working dir/openlane/designs/picorv32a/runs/<recent_run>/results/placements/`
-`magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs. tech/magic/sky130A.tech lef read ../../tmp/merged. lef def read picorv32a.placement.def`
-
-<img width="1173" alt="Screenshot 2024-11-19 at 7 50 11 PM" src="https://github.com/user-attachments/assets/3097a543-e8aa-4d17-acaa-2e25b113eb03">
-
----
-
 </details>
 
 ---
