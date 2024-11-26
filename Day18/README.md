@@ -198,41 +198,48 @@ Fall\ Delay = Time\ at\ Output\ 50\% - Time\ at\ Input\ 50\%
 ### Address DRC Issues in Magic Tech File
 
 Steps:
+	- Download the drc_tests files for troubleshooting.
+	- Inspect and modify rules in the sky130A.tech file for correcting DRC checks.
+	- Reload the updated tech file in Magic and rerun DRC checks.
 
-	•	Download the drc_tests files for troubleshooting.
-	•	Inspect and modify rules in the sky130A.tech file for correcting DRC checks.
-	•	Reload the updated tech file in Magic and rerun DRC checks.
+**Commands**
 
+```
+cd  
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz  
+tar xfz drc_tests.tgz  
+cd drc_tests  
+magic -d XR &
+```
 
+![Screenshot from 2024-11-25 15-02-57](https://github.com/user-attachments/assets/2775c5e0-4b7d-46cf-a7c2-4580433f310b)
+![Screenshot from 2024-11-25 15-02-26](https://github.com/user-attachments/assets/0d727758-0ab5-42d9-ac4f-46b5dc623554)
+![Screenshot from 2024-11-25 14-41-06](https://github.com/user-attachments/assets/dc500649-319e-4368-8840-bb5d1f66dad6)
 
+---
 
+**Updating Tech File**
 
+	- Use tech load sky130A.tech in Magic’s TKCon window.
+	- Use drc check and drc why to verify the fixes.
 
+**Outputs and Results**
 
+**Magic Layout Screenshots**
 
+	- Custom inverter layout.
+	- Component identification (PMOS, NMOS, connectivity verification).
+ 	- DRC violations and corrections.
 
+**Ngspice Simulations**
 
+	- Plots of y vs. time.
+	- Calculations for rise/fall transition times and cell delays.
 
+![Screenshot from 2024-11-25 15-03-06](https://github.com/user-attachments/assets/08f7ae32-60af-4853-9d79-6b74b257bfdf)
+![Screenshot from 2024-11-25 15-26-36](https://github.com/user-attachments/assets/93853445-f0ee-4933-a382-50553f0245bb)
+![Screenshot from 2024-11-25 15-21-04](https://github.com/user-attachments/assets/57a3723c-18e6-4f32-ad59-8f77e2c2263e)
+![Screenshot from 2024-11-25 15-07-30](https://github.com/user-attachments/assets/f275aca3-e278-4bb7-aad3-748b19b0d766)
+![Screenshot from 2024-11-25 15-05-13](https://github.com/user-attachments/assets/cec67060-2fe6-4e33-9c71-6279e18b005e)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
