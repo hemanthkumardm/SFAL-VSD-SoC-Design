@@ -135,9 +135,10 @@ This repository demonstrates the process of creating and integrating a custom in
 1. **Prepare the design** by running the following command to set up the necessary files and directories:
 
     ```tcl
-    prep -design picorv32a
+    prep -design picorv32a -tag 26-11_04-28 -overwrite
     ```
-<img width="650" alt="Screenshot 2024-11-27 at 3 34 16 AM" src="https://github.com/user-attachments/assets/287dc6f0-2ea2-41a4-a4a7-1c34eef74e00">
+
+<img width="1056" alt="Screenshot 2024-11-27 at 8 43 54 AM" src="https://github.com/user-attachments/assets/0a23dcc8-adca-4c34-a9c0-504fbf9ff182">
 
 --
 
@@ -147,6 +148,8 @@ This repository demonstrates the process of creating and integrating a custom in
     add_lefs -src $lefs
     ```
 
+<img width="420" alt="Screenshot 2024-11-27 at 8 46 02 AM" src="https://github.com/user-attachments/assets/33c2b158-97a5-486d-ab37-9de7e41ebda2">
+ 
 ---
 
 3. **Set synthesis parameters** to optimize the design:
@@ -155,6 +158,9 @@ This repository demonstrates the process of creating and integrating a custom in
     set ::env(SYNTH_SIZING) 1
     ```
 
+<img width="354" alt="Screenshot 2024-11-27 at 8 47 19 AM" src="https://github.com/user-attachments/assets/fdfd57be-0df6-4abb-8e2e-3e75b51a57be">
+
+---
 
 ## Custom Inverter Integration
 
@@ -166,10 +172,9 @@ This repository demonstrates the process of creating and integrating a custom in
     ```tcl
     run_synthesis
     ```
----
+![Screenshot from 2024-11-26 13-23-02](https://github.com/user-attachments/assets/571669e6-4fcb-443c-bb81-801a53b4beec)
 
-<img width="318" alt="Screenshot 2024-11-27 at 3 35 15 AM" src="https://github.com/user-attachments/assets/b63054e5-006b-4d0e-a951-c31ec514298e">
-![Screenshot from 2024-11-26 13-23-02](https://github.com/user-attachments/assets/f65ed3f8-14d9-4554-ad88-1b421edb78a5)
+---
 
 
 3. **Check the results** by observing the slack and area improvements. The slack should become 0, and area might increase due to the custom inverter.
@@ -212,6 +217,9 @@ This repository demonstrates the process of creating and integrating a custom in
     ```tcl
     run_floorplan
     ```
+    
+![Screenshot from 2024-11-26 13-24-33](https://github.com/user-attachments/assets/1fa84394-a7cd-497a-9eeb-d8b2f40687ed)
+
 
 2. **Use alternative commands** for floorplan if errors occur:
     ```tcl
@@ -220,36 +228,327 @@ This repository demonstrates the process of creating and integrating a custom in
     tap_decap_or
     ```
 
+![Screenshot from 2024-11-26 13-25-35](https://github.com/user-attachments/assets/6ff94de5-0ae4-47b2-b38c-e82b31a6f790)
+ ![Screenshot from 2024-11-26 13-25-46](https://github.com/user-attachments/assets/25b05d28-bd41-4de4-bdf9-231f398c7712)
+![Screenshot from 2024-11-26 13-25-39](https://github.com/user-attachments/assets/85d2880a-b654-4246-9ff7-999a589449e5)
+
+
 3. **Run placement**:
     ```tcl
     run_placement
     ```
+
+![Screenshot from 2024-11-26 13-35-02](https://github.com/user-attachments/assets/a17d7a04-39d6-4c0a-9897-8fcfa574b719)
 
 4. **View placement in Magic**:
     - Load the placement definition into Magic for visualization:
     ```bash
     magic -T $PDK_ROOT/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
     ```
+
+![Screenshot from 2024-11-26 13-43-51](https://github.com/user-attachments/assets/659cae33-244b-4cdd-8f1f-05e6665821bb)
+![Screenshot from 2024-11-26 13-43-26](https://github.com/user-attachments/assets/c1ea06c1-0b16-4052-9bd9-7c1bbfac55dd)
+![Screenshot from 2024-11-26 13-35-12](https://github.com/user-attachments/assets/924c1a33-8e70-4cd7-a6cf-e3e504cac7cf)
+
 ---
 
-# Tb be continued 
+# Post-Synthesis Timing Analysis and ECO Fixes with OpenSTA
 
-![Screenshot from 2024-11-26 13-43-26](https://github.com/user-attachments/assets/fe0f9a6f-4fed-48ec-8b0c-10cabd465d87)
-![Screenshot from 2024-11-26 22-38-34](https://github.com/user-attachments/assets/8770a234-f302-4f74-ba0f-3100f63fa117)
-![Screenshot from 2024-11-26 22-38-30](https://github.com/user-attachments/assets/93752807-d58c-499d-908c-1ab301db9bf5)
-![Screenshot from 2024-11-26 22-37-10](https://github.com/user-attachments/assets/a6b27f16-d692-4ef5-8441-35364b213593)
-![Screenshot from 2024-11-26 22-36-55](https://github.com/user-attachments/assets/5738fe3c-be9f-4849-90d7-cab47e1baca0)
-![Screenshot from 2024-11-26 22-34-42](https://github.com/user-attachments/assets/27a1b7a6-ef78-4e66-afb6-1e00dcd176e8)
-![Screenshot from 2024-11-26 22-28-03](https://github.com/user-attachments/assets/3ed7387f-62ac-4ca3-88e4-d92057c8289c)
-![Screenshot from 2024-11-26 22-13-10](https://github.com/user-attachments/assets/05b9323b-3e46-4710-b291-e89d71c5be9d)
-![Screenshot from 2024-11-26 22-12-44](https://github.com/user-attachments/assets/851fe7e1-a0db-4223-9da2-d224b50a369a)
-![Screenshot from 2024-11-26 21-48-10](https://github.com/user-attachments/assets/9ae29208-2105-4f1c-a982-321967e649ef)
-![Screenshot from 2024-11-26 21-48-00](https://github.com/user-attachments/assets/748e7ed4-b86e-4312-a884-d7030aac007c)
-![Screenshot from 2024-11-26 21-45-31](https://github.com/user-attachments/assets/84881e0a-6a3f-49a0-a22c-6935a6e40fd0)
-![Screenshot from 2024-11-26 21-40-34](https://github.com/user-attachments/assets/f0bd4b84-a1b0-4d2b-94b9-ccbbb6b38ea1)
-![Screenshot from 2024-11-26 21-28-57](https://github.com/user-attachments/assets/197ee219-1d18-4e72-9459-be8d901df074)
-![Screenshot from 2024-11-26 14-49-58](https://github.com/user-attachments/assets/d2214ee8-1235-4a2f-be25-274370da234f)
-![Screenshot from 2024-11-26 14-35-53](https://github.com/user-attachments/assets/a3c2cddd-f955-4652-8074-f406b763273f)
-![Screenshot from 2024-11-26 14-35-45](https://github.com/user-attachments/assets/a3c7d8e0-6af1-46da-bb2a-b38510f9a61d)
-![Screenshot from 2024-11-26 14-07-18](https://github.com/user-attachments/assets/995ee156-d65c-4d25-8b8d-4cd8353df5a9)
-![Screenshot from 2024-11-26 14-07-13](https://github.com/user-attachments/assets/50413000-2e5a-45d4-87f3-21ffd98c9337)
+This documentation outlines the process of performing post-synthesis timing analysis, ECO (Engineering Change Order) fixes, and updating the netlist in OpenLANE. The primary focus is on analyzing timing violations, optimizing timing through ECO fixes, and incorporating the updated netlist into the physical design flow.
+
+---
+
+## 9. Post-Synthesis Timing Analysis with OpenSTA
+
+### Initial Timing Analysis
+Since the initial synthesis run contains timing violations, we analyze it before any optimization.
+
+#### Steps to Invoke OpenLANE and Perform Synthesis
+```bash
+# Navigate to OpenLANE directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Invoke the Docker environment
+docker
+
+# Open OpenLANE in interactive mode
+./flow.tcl -interactive
+
+# Load OpenLANE packages
+package require openlane 0.9
+
+# Prepare the design
+prep -design picorv32a
+
+# Include additional LEFs
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Set SYNTH_SIZING variable
+set ::env(SYNTH_SIZING) 1
+
+# Run synthesis
+run_synthesis
+```
+
+Create pre_sta.conf
+
+```
+# Navigate to OpenLANE directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Run OpenSTA with the configuration script
+sta pre_sta.conf
+```
+
+**pre_sta.conf**
+
+```
+set_cmd_units -time ns -capacitance pF -current mA -voltage V - resistance kOhm -distance um
+
+read_liberty -max /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib
+read_liberty -min /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib
+
+read_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/run s/25-03_18-52/results/synthesis/picorv32a.synthesis.v
+link design picorv32a
+read_sdc /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/my_base.sdc
+report tns report wns
+report_checks-path_delay min_max -fields {slew trans net cap input_pin}
+```
+
+<img width="752" alt="Screenshot 2024-11-27 at 9 15 37 AM" src="https://github.com/user-attachments/assets/f2bb6096-3752-457a-8b10-41747dcf4317">
+
+Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
+
+**my_base.sdc**
+
+```
+set ::env(CLOCK_PORT) clk
+set :: env(CLOCK PERIOD) 24.73
+#set ::env(SYNTH_DRIVING_CELL) sky130_vsdinv
+set ::env(SYNTH_DRIVING_CELL) sky130_fd_sc_hd__inv_8
+set :: env(SYNTH_DRIVING CELL_PIN) Y
+set :: env(SYNTH CAP LOAD) 17.653
+set :: env(IO_PCT) 0.2
+set :: env(SYNTH_MAX FANOUT) 6
+
+create_clock [get_ports $:: env(CLOCK_PORT)] -name $::env(CLOCK_PORT) -period $:: env(CLOCK_PERIOD)
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $: :env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $:: :env(I0_PCT) ]
+puts "\[INFO\]: Setting output delay to: $output_delay_value"
+puts "\[INFO\]: Setting input delay to: $input_delay_value"
+
+set_max_fanout $:: env (SYNTH_MAX_FANOUT) [current_design]
+
+set clk_indx Ilsearch [all_ inputs] lget_port $::env(CLOCK_PORT)]]
+#set rst_indx [lsearch [all_inputs] [get_port resetn]]
+set all inputs_wo_clk [replace [all_inputs] $clk_indx $clk_indx]
+#set all_inputs_wo_clk_rst Ilreplace Sall_inputs_wo _clk $rst_indx $rst_indx]
+set all_inputs_wo_clk_rst $all_inputs_wo_clk
+
+# correct resetn
+
+set input delav $input_delay_value -clock [get_clocks $::env(CLOCK_PORT)] $all_inputs_wo_clk_rst
+#set_rst_input_delay 0.0-clock [get_clocks §::env(CLOCK_PORT)] {resetn}
+set_output_delay $output_delay_value -clock lget_clocks $::env(CLOCK_PORT)] [all_outputs]
+# TODO set this as parameter
+set_driving_cell - lib_cell $:: env(SYNTH_DRIVING_CELL) -pin $:: env(SYNTH_DRIVING_CELL_PIN) lall_in puts]
+set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0]
+puts "\[INFO\]: Setting load to: $cap_load"
+set_load $cap_load [all_outputs]
+```
+
+**Run these commands**
+
+```
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Command to invoke OpenSTA tool with script
+sta pre_sta.conf
+```
+
+<img width="756" alt="Screenshot 2024-11-27 at 9 46 58 AM" src="https://github.com/user-attachments/assets/5ac38b08-42f9-4a21-aaef-9f3f6a00725c">
+
+---
+
+### ECO Fixes to Remove Timing Violations
+
+Identifying and Fixing Timing Violations
+
+```
+# Report all connections to a net
+report_net -connections _11672_
+
+# Replace a cell to improve timing
+replace_cell _14510_ sky130_fd_sc_hd__or3_4
+
+# Generate a custom timing report
+report_checks -fields {net cap slew input_pins} -digits 4
+```
+
+**Results**
+
+  - Initial Worst Negative Slack (WNS): -23.9000
+  - Reduced WNS: -22.6173 (Improvement: 1.2827 ns)
+
+<img width="749" alt="Screenshot 2024-11-27 at 9 49 07 AM" src="https://github.com/user-attachments/assets/0bd2dd2e-cf60-4b0f-9528-75a6c9c12d0f">
+
+---
+
+# Run CTS
+
+`run_cts`
+
+![Screenshot from 2024-11-26 21-28-36](https://github.com/user-attachments/assets/9ec602b6-b8d1-4f83-8011-13c292bb97a5)
+
+ # RTL to GDSII Flow with OpenLANE
+
+This repository documents the RTL-to-GDSII implementation flow using OpenLANE, including post-CTS timing analysis, power distribution network (PDN) generation, detailed routing, and parasitic extraction with SPEF.
+
+---
+
+### Post-CTS Timing Analysis
+
+Commands to perform timing analysis with OpenROAD after CTS:
+
+```tcl
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/24-03_10-03/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/cts/picorv32a.cts.def
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+help report_checks
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+```
+
+![Screenshot from 2024-11-26 21-48-00](https://github.com/user-attachments/assets/2551fc10-ab87-4882-ac8f-256bab25d99d)
+
+**Modified Timing Analysis**
+
+Steps to modify CTS_CLK_BUFFER_LIST and perform analysis:
+
+```
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+# Removing 'sky130_fd_sc_hd__clkbuf_1' from the list
+set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
+
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+# Checking current value of 'CURRENT_DEF'
+echo $::env(CURRENT_DEF)
+
+# Setting def as placement def
+set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/placement/picorv32a.placement.def
+
+# Run CTS again
+run_cts
+
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+# Command to run OpenROAD tool
+openroad
+
+# Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/24-03_10-03/tmp/merged.lef
+
+# Reading def file
+read_def /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/cts/picorv32a.cts.def
+
+# Creating an OpenROAD database to work with
+write_db pico_cts1.db
+
+# Loading the created database in OpenROAD
+read_db pico_cts.db
+
+# Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/synthesis/picorv32a.synthesis_cts.v
+
+# Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+# Link design and library
+link_design picorv32a
+
+# Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+# Setting all cloks as propagated clocks
+set_propagated_clock [all_clocks]
+
+# Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+# Report hold skew
+report_clock_skew -hold
+
+# Report setup skew
+report_clock_skew -setup
+
+# Exit to OpenLANE flow
+exit
+
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+# Inserting 'sky130_fd_sc_hd__clkbuf_1' to first index of list
+set ::env(CTS_CLK_BUFFER_LIST) [linsert $::env(CTS_CLK_BUFFER_LIST) 0 sky130_fd_sc_hd__clkbuf_1]
+
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+```
+
+<img width="252" alt="Screenshot 2024-11-27 at 10 10 59 AM" src="https://github.com/user-attachments/assets/925a75bd-4d4f-4110-8c38-dafd5b471939">
+<img width="757" alt="Screenshot 2024-11-27 at 10 11 12 AM" src="https://github.com/user-attachments/assets/7c73d404-9288-4932-a15e-816b51c9a3fe">
+
+**Power Distribution Network Generation**
+
+**Commands to generate the PDN and load the DEF in Magic**
+
+```
+gen_pdn
+magic -T path-to-techfile lef read merged.lef def read pdn.def &
+```
+
+![Screenshot from 2024-11-26 22-19-39](https://github.com/user-attachments/assets/434a2cce-2abf-40ae-8213-7a67b82664b9)
+![Screenshot from 2024-11-26 22-19-19](https://github.com/user-attachments/assets/cd687017-b676-480f-a026-976ba175cb6b)
+![Screenshot from 2024-11-26 22-17-23](https://github.com/user-attachments/assets/9ff2a5ba-7f28-424e-968e-b0be77d4bdca)
+![Screenshot from 2024-11-26 22-13-10](https://github.com/user-attachments/assets/8302edb4-eb3e-4949-b219-4ef8b10d9998)
+![Screenshot from 2024-11-26 22-12-44](https://github.com/user-attachments/assets/68c14ff6-8a65-4811-b92b-7f1fe800d143)
+
+**Detailed Routing with TritonRoute**
+
+Steps to perform detailed routing:
+
+`run_routing`
+
+![Screenshot from 2024-11-26 22-34-42](https://github.com/user-attachments/assets/eae650ae-67bc-4d21-9282-474737b10f2b)
+![Screenshot from 2024-11-26 22-28-03](https://github.com/user-attachments/assets/a33fce8d-4aa2-4dad-be50-132c2b15b961)
+![Screenshot from 2024-11-26 22-36-55](https://github.com/user-attachments/assets/6a8f98f4-d032-4551-bb2a-a27c9da11919)
+![Screenshot from 2024-11-26 22-37-10](https://github.com/user-attachments/assets/65f8e390-375a-49bf-b1ab-0ff2c46f7dcd)
+
+**Post-Route Timing Analysis**
+
+Commands for post-route timing analysis with SPEF:
+
+```
+read_spef /path/to/spef
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+```
+![Screenshot from 2024-11-26 22-38-30](https://github.com/user-attachments/assets/aacbe871-3dbe-4d16-9b01-6900becb7bfe)
+
+![Screenshot from 2024-11-26 22-38-34](https://github.com/user-attachments/assets/6a4bc617-77b6-4498-8cfc-49a51ec6deca)
+
+
+
+
+
