@@ -467,9 +467,9 @@ View the report using:
 
 `vim violators.rpt`
 
-<img width="659" alt="Screenshot 2024-12-01 at 7 47 28 AM" src="https://github.com/user-attachments/assets/91b044f0-3b5a-4dfc-a26b-16fb51e85b82">
-
 **Example output:**
+
+<img width="659" alt="Screenshot 2024-12-01 at 7 47 28 AM" src="https://github.com/user-attachments/assets/91b044f0-3b5a-4dfc-a26b-16fb51e85b82">
 
 <images>
 
