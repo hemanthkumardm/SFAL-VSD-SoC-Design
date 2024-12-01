@@ -17,7 +17,8 @@ VSDBabySoC is a small yet powerful RISC-V-based SoC designed to integrate three 
 
   Its primary purpose is to integrate and test these IPs collaboratively and calibrate the analog part of the SoC.
 
-  ![Diagram Placeholder]()
+<img width="624" alt="Screenshot 2024-12-01 at 7 38 02 AM" src="https://github.com/user-attachments/assets/51998ac2-e3af-4965-83d2-82a1e5d71db9">
+
 
   ---
   
@@ -109,6 +110,12 @@ VSDBabySoC is a small yet powerful RISC-V-based SoC designed to integrate three 
 
 IC Compiler II is Synopsys' industry-leading physical design tool for place and route, delivering optimized **Performance, Power, and Area (PPA)** for next-generation designs. It supports a wide range of designs across market verticals and process technologies, enabling efficient design closure and faster time-to-market.
 
+<img width="494" alt="Screenshot 2024-12-01 at 7 38 57 AM" src="https://github.com/user-attachments/assets/4d4bfa64-efae-449b-8516-7ee54dd614d6">
+
+<img width="579" alt="Screenshot 2024-12-01 at 7 39 27 AM" src="https://github.com/user-attachments/assets/5977870a-c24b-45ea-b456-24ba8a57e9f1">
+
+<img width="327" alt="Screenshot 2024-12-01 at 7 39 43 AM" src="https://github.com/user-attachments/assets/fcad6b4c-6018-4e08-837b-f8237b1c1d1c">
+
 ---
 
 ## Key Features
@@ -151,6 +158,7 @@ IC Compiler II is Synopsys' industry-leading physical design tool for place and 
 
 ---
 
+
 ## Technology and Libraries
 
 ### Technology File
@@ -165,9 +173,32 @@ Stores design views, including:
 - **FRAM**: Abstract view for P&R.
 - **LM**: Logical Model with timing and power data.
 
+```
+Technology {
+dielectric = 3.7
+unitTimeName = "ns"
+timePrecision = 1000
+unitLengthName = "micron"
+lengthPrecision = 1000
+gridResolution = 5
+unitVoltageName = "v"
+}
+...
+Layer "m1" {
+layerNumber = 16
+maskName = "metal1"
+pitch = 0.56
+defaultWidth = 0.23
+minWidth = 0.23
+minSpacing = 0.23
+```
+
 ---
 
 ## Design Flow
+
+<img width="516" alt="Screenshot 2024-12-01 at 7 40 30 AM" src="https://github.com/user-attachments/assets/389e5594-a297-427b-ac4c-cd436f458ad6">
+
 
 ### 1. **Design Planning**
 - **Partitioning**: Divide designs into manageable blocks for parallel processing.
@@ -189,6 +220,8 @@ Stores design views, including:
   - Pre-floorplan.
   - Pre-macro placement.
   - Pre-power insertion.
+
+
 
 ---
 
@@ -212,6 +245,10 @@ Stores design views, including:
 # RVMYTH Core in VSDBabySoC
 
 This repository includes scripts and instructions for generating a Gate-Level Netlist, performing synthesis, and completing physical design using Synopsys tools like **dc_shell** and **icc2_shell**.
+
+<img width="455" alt="Screenshot 2024-12-01 at 7 40 47 AM" src="https://github.com/user-attachments/assets/f8060832-f67e-4083-9afe-bd60da5c2a68">
+
+<img width="426" alt="Screenshot 2024-12-01 at 7 41 03 AM" src="https://github.com/user-attachments/assets/f0eab5ef-480d-46da-97c5-82fda413b2a2">
 
 ---
 
