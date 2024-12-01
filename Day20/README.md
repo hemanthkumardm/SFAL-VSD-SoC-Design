@@ -350,7 +350,8 @@ Running this script in dc_shell generates the Gate-Level Netlist (vsdbabysoc_gtl
 
 Once the synthesis flow completes successfully, the following blocks are generated:
 
-<image>
+<img width="769" alt="Screenshot 2024-12-01 at 7 45 06 AM" src="https://github.com/user-attachments/assets/7a700caf-6d2f-4e04-9cac-a501ef19efcb">
+
 
 # Physical Design
 
@@ -445,7 +446,8 @@ Standard cells and their placements are shown below:
    
 `report_timing`
 
-<image>
+<img width="624" alt="Screenshot 2024-12-01 at 7 46 04 AM" src="https://github.com/user-attachments/assets/c03cecb7-5e1b-45fc-9056-39148a8d120b">
+
 
 3.	Estimate Timing:
 
@@ -459,9 +461,13 @@ To check for violations, type the following command in icc2_shell after generati
 
 `report_constraints -all_violators -nosplit -verbose -significant_digits 4 > violators.rpt`
 
+<img width="819" alt="Screenshot 2024-12-01 at 7 48 04 AM" src="https://github.com/user-attachments/assets/a2ea38a9-3399-4ca6-8b85-a6ace1cacecc">
+
 View the report using:
 
 `vim violators.rpt`
+
+<img width="659" alt="Screenshot 2024-12-01 at 7 47 28 AM" src="https://github.com/user-attachments/assets/91b044f0-3b5a-4dfc-a26b-16fb51e85b82">
 
 **Example output:**
 
