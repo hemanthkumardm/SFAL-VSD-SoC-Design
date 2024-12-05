@@ -426,34 +426,22 @@ The top.tcl script provided in this repository is used for the physical design f
 
 After running the script, type start_gui in icc2_shell to visualize the layout:
 
-<images>
+<img width="1440" alt="Screenshot 2024-12-05 at 8 49 31 PM" src="https://github.com/user-attachments/assets/e9606ac5-6a3a-4c88-b0a4-23e8b7496042">
 
 ## FINCELLs
 
 Standard cells and their placements are shown below:
 
-<images>
+<img width="1279" alt="Screenshot 2024-12-05 at 8 54 21 PM" src="https://github.com/user-attachments/assets/11c55424-3f75-4717-87ae-34185f725def">
+
 
 ## Outputs Generated
 
 1.	Set Clock Propagation:
  
 `set_propagated_clock [all_clocks]`  
-  
-<image>
-
-2.	Timing Report:
-   
-`report_timing`
 
 <img width="624" alt="Screenshot 2024-12-01 at 7 46 04 AM" src="https://github.com/user-attachments/assets/c03cecb7-5e1b-45fc-9056-39148a8d120b">
-
-
-3.	Estimate Timing:
-
-`estimate_timing`
-
-<image>
 
 ## Violations
 
