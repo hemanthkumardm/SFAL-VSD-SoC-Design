@@ -574,6 +574,13 @@ run `pt_shell`
 
 <img width="965" alt="Screenshot 2024-12-10 at 11 37 15 PM" src="https://github.com/user-attachments/assets/397a5db5-7d5b-4a6d-8f99-f96756f5d01d">
 
+`source prime_time_sta.tcl`
+
+---
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 51 08 PM" src="https://github.com/user-attachments/assets/35785883-e22c-40a7-9090-7f3d77304e3d">
+
+---
 
 
 
