@@ -214,5 +214,18 @@ The Interconnect Technology Format (ITF) file describes process technology and i
   start_gui
   ```
 
+  <img width="1440" alt="Screenshot 2024-12-10 at 11 31 14 AM" src="https://github.com/user-attachments/assets/6d26edae-1904-40a6-a42a-00ed5b774e8b">
+
+  run `dc_shell` and `source sythesis.tcl`
+
+  <img width="898" alt="Screenshot 2024-12-10 at 11 32 38 AM" src="https://github.com/user-attachments/assets/2bdf6140-7a32-4e20-9210-eeb982b1aec8">
+
+  <img width="879" alt="Screenshot 2024-12-10 at 11 33 09 AM" src="https://github.com/user-attachments/assets/f4715559-a683-41e6-a305-558a8868ad6c">
+
+  <img width="861" alt="Screenshot 2024-12-10 at 11 33 45 AM" src="https://github.com/user-attachments/assets/e3fe7bd3-46ff-4070-bfad-7ed420cdf105">
+
+  
+
+
 
   
