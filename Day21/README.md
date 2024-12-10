@@ -428,11 +428,13 @@ Total              2.8782 mW         0.6156 mW         8.7213 nW         3.4938 
 
 **1.	VSDBabySoC Schematic**
 
-<image here>
+<img width="1440" alt="Screenshot 2024-12-11 at 1 03 39 AM" src="https://github.com/user-attachments/assets/6650511f-40b1-4fc2-96bf-8059308202fe">
 
 **2.	RVMYTH Core Schematic**
 
-<image here>
+<image here><img width="1440" alt="Screenshot 2024-12-11 at 1 03 04 AM" src="https://github.com/user-attachments/assets/514a4170-3ca6-465f-bfc8-cfe160299c20">
+
+<img width="1440" alt="Screenshot 2024-12-11 at 1 04 34 AM" src="https://github.com/user-attachments/assets/74a7528d-2d64-4d4d-80bb-e74ce95fd3cb">
 
 **Script Setup for Collaterals**
 
@@ -507,8 +509,11 @@ compile_pg -strategies rail_strat
 
 `start_gui`
 
-<image here>
-  
+![Screenshot 2024-12-11 at 1 26 44 AM](https://github.com/user-attachments/assets/acf6f84b-eca5-4af7-9626-2d7148276d60)
+
+<img width="1440" alt="Screenshot 2024-12-11 at 1 27 34 AM" src="https://github.com/user-attachments/assets/31c7a73b-2a43-425e-8a0c-910a736e0d5f">
+
+
 extract parasitics information in .SPEF format and post_route netlist by using following command :
 
 ```bash
