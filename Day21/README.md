@@ -224,8 +224,360 @@ The Interconnect Technology Format (ITF) file describes process technology and i
 
   <img width="861" alt="Screenshot 2024-12-10 at 11 33 45 AM" src="https://github.com/user-attachments/assets/e3fe7bd3-46ff-4070-bfad-7ed420cdf105">
 
+## Reports
+
+**1.	QoR Report:**
+
+ ```txt
+ Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : qor
+Design : vsdbabysoc
+Version: T-2022.03-SP5-6
+Date   : Tue Dec 10 17:12:13 2024
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              46.00
+  Critical Path Length:          9.92
+  Critical Path Slack:           0.01
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'default'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          0.87
+  Critical Path Slack:           9.13
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          1
+  Hierarchical Port Count:         12
+  Leaf Cell Count:               3273
+  Buf/Inv Cell Count:            1120
+  Buf Cell Count:                 368
+  Inv Cell Count:                 752
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      2597
+  Sequential Cell Count:          676
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    13486.684574
+  Noncombinational Area: 13532.978775
+  Buf/Inv Area:           4204.031868
+  Total Buffer Area:          1381.32
+  Total Inverter Area:        2822.71
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:             27019.663349
+  Design Area:           27019.663349
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          3295
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: sfalvsd
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    6.75
+  Logic Optimization:                  3.28
+  Mapping Optimization:                5.08
+  -----------------------------------------
+  Overall Compile Time:               39.46
+  Overall Compile Wall Clock Time:    40.16
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+ ```
+
+**2.	Area Report**
+
+```txt
+****************************************
+Report : area
+Design : vsdbabysoc
+Version: T-2022.03-SP5-6
+Date   : Tue Dec 10 17:12:13 2024
+****************************************
+
+Library(s) Used:
+
+    sky130_fd_sc_hd__tt_025C_1v80 (File: /home/hemanth/Desktop/VLSI/VSDBabySoc/src/lib/sky130_fd_sc_hd__tt_025C_1v80.db)
+    avsddac (File: /home/hemanth/Desktop/VLSI/VSDBabySoc/src/lib/avsddac.db)
+    avsdpll (File: /home/hemanth/Desktop/VLSI/VSDBabySoc/src/lib/avsdpll.db)
+
+Number of ports:                           19
+Number of nets:                          3307
+Number of cells:                         3274
+Number of combinational cells:           2595
+Number of sequential cells:               676
+Number of macros/black boxes:               2
+Number of buf/inv:                       1120
+Number of references:                       4
+
+Combinational area:              13486.684574
+Buf/Inv area:                     4204.031868
+Noncombinational area:           13532.978775
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 27019.663349
+Total area:                 undefined
+```
+
+**3.	Power Report**
+
+```txt
+****************************************
+Report : power
+        -analysis_effort low
+Design : vsdbabysoc
+Version: T-2022.03-SP5-6
+Date   : Tue Dec 10 17:12:13 2024
+****************************************
+
+
+Library(s) Used:
+
+    sky130_fd_sc_hd__tt_025C_1v80 (File: /home/hemanth/Desktop/VLSI/VSDBabySoc/src/lib/sky130_fd_sc_hd__tt_025C_1v80.db)
+    avsddac (File: /home/hemanth/Desktop/VLSI/VSDBabySoc/src/lib/avsddac.db)
+    avsdpll (File: /home/hemanth/Desktop/VLSI/VSDBabySoc/src/lib/avsdpll.db)
+
+
+Operating Conditions: tt_025C_1v80   Library: sky130_fd_sc_hd__tt_025C_1v80
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+vsdbabysoc             Small             sky130_fd_sc_hd__tt_025C_1v80
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =   2.8782 mW   (82%)
+  Net Switching Power  = 615.5834 uW   (18%)
+                         ---------
+Total Dynamic Power    =   3.4938 mW  (100%)
+
+Cell Leakage Power     =   8.7213 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.4454            0.0000            0.4454  (  12.75%)
+clock_network      2.7524            0.0000            0.0000            2.7524  (  78.78%)  i
+register       4.6189e-02        1.6094e-02            5.4668        6.2288e-02  (   1.78%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  7.9652e-02            0.1541            3.2545            0.2338  (   6.69%)
+--------------------------------------------------------------------------------------------------
+Total              2.8782 mW         0.6156 mW         8.7213 nW         3.4938 mW
+--------------------------------------------------------------------------------------------------
+```
+
+### Schematics
+
+**1.	VSDBabySoC Schematic**
+
+<image here>
+
+**2.	RVMYTH Core Schematic**
+
+<image here>
+
+**Script Setup for Collaterals**
+
+Collateral setup scripts can be found at the following path:
+
+`/home/hemanth/Desktop/VLSI/VSDBabySoc/standaloneFlow`
+
+**Key Files:**
+
+  . compile_pg_example.tcl
+  . init_design.mcmm_example.auto_expanded.tcl
+  . init_design.read_parasitic_tech_example.tcl
+  . init_design.tech_setup.tcl
+  . pns_example.tcl
+  . top.tcl
+  . write_block_data.tcl
+
+**compile_pg_example.tcl**
+
+```tcl
+compile_pg -strategies core_ring
+#compile_pg -strategies s_pad
+compile_pg -strategies s_mesh1
+#compile_pg -strategies macro_con 
+compile_pg -strategies rail_strat
+```
+**init_design.mcmm_example.auto_expanded.tcl**
+
+<img width="1440" alt="Screenshot 2024-12-10 at 10 54 31 PM" src="https://github.com/user-attachments/assets/ba857b56-0f9a-4a03-ac14-bf30ca431832">
+
+**init_design.read_parasitic_tech_example.tcl**
+
+<img width="1440" alt="Screenshot 2024-12-10 at 10 58 23 PM" src="https://github.com/user-attachments/assets/c4fd6ef9-f8d9-4ade-8a63-1fa720becbc6">
+
+**init_design.tech_setup.tcl**
+
+<img width="1440" alt="Screenshot 2024-12-10 at 10 59 28 PM" src="https://github.com/user-attachments/assets/713d084e-3309-4b45-92de-e0fb8b1586d2">
+
+**pns_example.tcl**
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 00 16 PM" src="https://github.com/user-attachments/assets/8b22bac7-4e57-4fd1-a60d-ee02cf04b41c">
+
+**top.tcl**
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 01 02 PM" src="https://github.com/user-attachments/assets/73475867-b1c2-4512-b4f8-60d61c8fc5a1">
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 01 17 PM" src="https://github.com/user-attachments/assets/392a023c-6bcc-41fd-b9c4-3a8ed9762dbc">
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 01 30 PM" src="https://github.com/user-attachments/assets/407cfede-34fd-46c7-91a1-66a52405dbd9">
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 01 55 PM" src="https://github.com/user-attachments/assets/3f93cddf-2a35-4198-afe9-98dfccc1a792">
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 02 08 PM" src="https://github.com/user-attachments/assets/e74c2f4d-6b7f-4a1a-9ce3-ee8906722839">
+
+**write_block_data.tcl**
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 03 00 PM" src="https://github.com/user-attachments/assets/31bbbbcb-711c-4c66-b88a-3949ffce2163">
+
+---
+
+**Run `icc2_shell`**
+
+<img width="776" alt="Screenshot 2024-12-10 at 11 04 19 PM" src="https://github.com/user-attachments/assets/79abccc6-fe74-440d-9da6-4d5e6d9e0a2d">
+
+`source top.tcl`
+
+<img width="768" alt="Screenshot 2024-12-10 at 11 18 14 PM" src="https://github.com/user-attachments/assets/c5f1729a-eb66-4590-83d7-b10edaed7b47">
+
+---
+
+**Output**
+
+`start_gui`
+
+<image here>
   
+extract parasitics information in .SPEF format and post_route netlist by using following command :
+
+```bash
+file mkdir ./output_after_placement
+write_verilog ./output_after_placement/design_after_place_opt.v
+file mkdir ./output_spef_after_placement
+write_parasitics -corner func1 -output ./output_spef_after_placement/design_after_place_opt.spef
+write_verilog /home/subhasis/VSDBabySoC/output/vsdbabysoc_post_route_net.v
+```
+
+<img width="974" alt="Screenshot 2024-12-10 at 11 21 06 PM" src="https://github.com/user-attachments/assets/93a4f4f3-a16e-426e-9524-474639d4d1c0">
+
+**design_after_place_opt.spef.temp1_25.spef**
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 22 34 PM" src="https://github.com/user-attachments/assets/b903d421-c81a-49a0-bb44-3cc05dda067c">
+
+**vsdbabysoc_post_route_net.v**
+
+<img width="1440" alt="Screenshot 2024-12-10 at 11 25 29 PM" src="https://github.com/user-attachments/assets/0eb9be22-113b-4479-abe1-8d0cbc839487">
+
+---
+
+## Prime Time STA analysis for all available PVT Corners
+
+Script to run STA analysis for all PVT Corners:
+
+```tcl
+set m1 ""
+set pvt ""
+set wns ""
+set whs ""
+set FH [open report_timing_prime_time.rpt w]
+puts $FH "PVT_Corner\tWNS\tWHS"
+set lib_files [glob -directory /home/hemanth/Desktop/VLSI/VSDBabySoc/src/Timing/timing/ -type f *.db]
+foreach lib_file_paths $lib_files {
+regexp {.*\/sky130_fd_sc_hd__(.*)\.db$} $lib_file_paths m1 pvt
+
+set link_path "* /home/hemanth/Desktop/VLSI/VSDBabySoc/src/lib/avsdpll.db /home/hemanth/Desktop/VLSI/VSDBabySoc/src/lib/avsddac.db"
+lappend link_path $lib_file_paths
+
+read_verilog "/home/hemanth/Desktop/VLSI/VSDBabySoc/standaloneFlow/output_after_placement/design_after_place_opt.v"
+current_design vsdbabysoc
+
+link_design
+read_sdc "/home/hemanth/Desktop/VLSI/VSDBabySoc/vsdbabysoc_icc2.sdc"
+read_parasitics "/home/hemanth/Desktop/VLSI/VSDBabySoc/standaloneFlow/output_spef_after_placement/design_after_place_opt.spef.temp1_25.spef"
+
+
+set wns [get_attribute [get_timing_paths -delay_type max -max_paths 1] slack]
+set whs [get_attribute [get_timing_paths -delay_type min -max_paths 1] slack]
+
+puts $FH "$pvt\t$wns\t$whs"
+
+remove_annotated_parasitics -all
+reset_design
+remove_design -all
+remove_lib -all
+}
+close $FH
+```
+
+run `pt_shell`
+
+<img width="965" alt="Screenshot 2024-12-10 at 11 37 15 PM" src="https://github.com/user-attachments/assets/397a5db5-7d5b-4a6d-8f99-f96756f5d01d">
 
 
 
-  
+
+
+
+
+
