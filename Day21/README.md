@@ -617,9 +617,28 @@ run `pt_shell`
 
 ---
 
+# Generated SDC file from icc2_shell
 
+`write_sdc -output /home/hemanth/Desktop/VLSI/VSDBabySoc/pt_constraints.sdc`
 
+<img width="1440" alt="Screenshot 2024-12-14 at 11 05 23 PM" src="https://github.com/user-attachments/assets/f4dda52c-0392-4135-b620-488c23f95248" />
 
+---
+re-running the prime_time_sta.tcl with updated sdc path
+
+<img width="1440" alt="Screenshot 2024-12-14 at 11 06 34 PM" src="https://github.com/user-attachments/assets/610b829f-60bd-46b6-9d9c-e54f3f6c620b" />
+
+## results (warnings)
+
+<img width="1440" alt="Screenshot 2024-12-14 at 11 08 05 PM" src="https://github.com/user-attachments/assets/4520cfa2-a1dc-4715-88a0-00c3a914095c" />
+
+<img width="1440" alt="Screenshot 2024-12-14 at 11 08 15 PM" src="https://github.com/user-attachments/assets/4638da76-6321-447c-ba5f-180009ecedca" />
+
+<img width="1440" alt="Screenshot 2024-12-14 at 11 09 15 PM" src="https://github.com/user-attachments/assets/32e3aede-b0c3-48a0-a8fd-ceeab54967bd" />
+
+<img width="1440" alt="Screenshot 2024-12-14 at 11 09 41 PM" src="https://github.com/user-attachments/assets/0cf506d0-423a-410f-8535-9612e75c3aed" />
+
+<img width="1440" alt="Screenshot 2024-12-14 at 11 09 58 PM" src="https://github.com/user-attachments/assets/1a506ad7-30c7-4708-bace-ac8215915fc3" />
 
 
 
