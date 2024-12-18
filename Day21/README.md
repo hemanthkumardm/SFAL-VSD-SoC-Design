@@ -628,17 +628,19 @@ re-running the prime_time_sta.tcl with updated sdc path
 
 <img width="1440" alt="Screenshot 2024-12-14 at 11 06 34 PM" src="https://github.com/user-attachments/assets/610b829f-60bd-46b6-9d9c-e54f3f6c620b" />
 
-## results (warnings)
+## results 
 
-<img width="1440" alt="Screenshot 2024-12-14 at 11 08 05 PM" src="https://github.com/user-attachments/assets/4520cfa2-a1dc-4715-88a0-00c3a914095c" />
+<img width="376" alt="Screenshot 2024-12-17 at 10 22 01 PM" src="https://github.com/user-attachments/assets/46430b93-e757-49de-9d9c-f2bdea0298a1" />
 
-<img width="1440" alt="Screenshot 2024-12-14 at 11 08 15 PM" src="https://github.com/user-attachments/assets/4638da76-6321-447c-ba5f-180009ecedca" />
+![WhatsApp Image 2024-12-15 at 14 19 51](https://github.com/user-attachments/assets/0a36a46f-91e5-4454-8077-1e338a2678bd)
 
-<img width="1440" alt="Screenshot 2024-12-14 at 11 09 15 PM" src="https://github.com/user-attachments/assets/32e3aede-b0c3-48a0-a8fd-ceeab54967bd" />
+This huge variation in our results from Post-Synthesis STA is because of following reasons :
 
-<img width="1440" alt="Screenshot 2024-12-14 at 11 09 41 PM" src="https://github.com/user-attachments/assets/0cf506d0-423a-410f-8535-9612e75c3aed" />
+  . Real Wires (post-routing) vs no wires (post-synth)
+  . Real,Propagated Clock Tree (post-routing) vs Ideal Clock Network (post-synth).
+  . Prime Time TIming Analysis Tool vs DC Internal Timing Analysis Tool.
 
-<img width="1440" alt="Screenshot 2024-12-14 at 11 09 58 PM" src="https://github.com/user-attachments/assets/1a506ad7-30c7-4708-bace-ac8215915fc3" />
+
 
 
 
