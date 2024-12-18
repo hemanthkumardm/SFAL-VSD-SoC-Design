@@ -54,6 +54,6 @@ To address these issues, companies are working on better ECO tools that can auto
 
 ---
 
-## Summary
+## LABS
 
-ECO is a critical step in chip design to fix issues or make updates without starting over. By focusing on specific layers (like metal-only changes) and using automated tools, engineers can save time, reduce costs, and deliver high-quality chips faster.
+
