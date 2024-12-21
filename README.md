@@ -33,10 +33,3 @@ This repository documents my journey through the SFAL-VSD-SoC-Design program org
 	•	Document daily progress to track growth and improvements.
 	•	Showcase projects and learning outcomes.
  
-## Learning Milestones
-
-## Task Index
-
-| Day       | Folder          | Task Description                                           |
-|-----------|------------------|-----------------------------------------------------------|
-| [Day 1](Day1/)  | `Day1/`        | 1. Tools Installation  |
