@@ -20,6 +20,7 @@ There are two main types of ECOs based on the level of changes made to the chip:
 
 ---
 
+
 ## Steps in the ECO Process
 
 The ECO process has a few important steps:
@@ -287,7 +288,7 @@ report_timing -delay_type min -capacitance -input_pins -nets -transition_time -n
 
 # Graphical Outputs
 
-<img width="910" alt="Screenshot 2024-12-21 at 4 26 16 PM" src="https://github.com/user-attachments/assets/76156728-85d3-4f0a-8e66-d8ef624d96f9" />
+<img width="513" alt="Screenshot 2024-12-28 at 8 40 49 PM" src="https://github.com/user-attachments/assets/f2eaca71-67ee-440a-ab1b-d52e8bd91344" />
 
 
 
