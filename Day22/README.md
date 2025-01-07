@@ -276,10 +276,6 @@ report_timing -delay_type min -capacitance -input_pins -nets -transition_time -n
 
 <img width="453" alt="Screenshot 2024-12-21 at 4 27 20 PM" src="https://github.com/user-attachments/assets/c3061c80-7675-4f2c-be75-07900476baaa" />
 
-# Graphical Outputs
-
-<img width="910" alt="Screenshot 2024-12-21 at 4 26 16 PM" src="https://github.com/user-attachments/assets/76156728-85d3-4f0a-8e66-d8ef624d96f9" />
-
 
 # Fourth Iteration [modified `set_min_library -min_version /home/hemanth/Desktop/VLSI/VSDBabySoc/src/Timing/timing_libs/sky130_fd_sc_hd__ss_n40C_1v28.db` and /home/hemanth/Desktop/VLSI/VSDBabySoc/src/Timing/timing_libs/sky130_fd_sc_hd__ss_n40C_1v95.db]
 
@@ -290,6 +286,9 @@ report_timing -delay_type min -capacitance -input_pins -nets -transition_time -n
 # Graphical Outputs
 
 <img width="261" alt="Screenshot 2024-12-28 at 8 56 11 PM" src="https://github.com/user-attachments/assets/a49aaba4-23ea-4a47-bc01-0596882f2de5" />
+
+<img width="920" alt="Screenshot 2025-01-07 at 10 59 33 PM" src="https://github.com/user-attachments/assets/43b220a4-480e-408b-b589-98c992d82306" />
+
 
 
 
