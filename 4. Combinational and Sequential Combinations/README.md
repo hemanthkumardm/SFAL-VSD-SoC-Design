@@ -1,5 +1,3 @@
-# Day 3: Combinational and Sequential Combinations
-
 <details>
 <summary>Part 1: Introduction to Optimization</summary>
 
