@@ -1,4 +1,4 @@
-# Post-Synthesis Simulation (Gate Level Simulation) of BabySoC
+
 
 ## Table of Contents
 - [Introduction](#introduction)
