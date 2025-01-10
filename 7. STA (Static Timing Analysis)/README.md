@@ -1,6 +1,4 @@
-# Day 6 - Basics of STA (Static Timing Analysis)
-
-## DC_D2SK1 - Introduction to STA
+# Introduction to STA
 
 <details>
   <summary>Intro to STA</summary>
@@ -115,7 +113,7 @@
 ----
 
 <details>
-  <summary>Lab6 - Exploring dotLib</summary>
+  <summary>Exploring dotLib</summary>
   
   - Hands-on exploration of `.lib` files.
   - Analyzing timing, power, and delay information from `.lib` files.
