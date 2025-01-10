@@ -2,7 +2,7 @@
 On Day 2, I focused on understanding timing libraries (`.libs`), the differences between hierarchical and flat synthesis, and efficient flip-flop coding styles. These concepts are crucial for improving the design and synthesis processes in RTL design. Below is the breakdown of the tasks and labs completed today.
 
 <details>
-  <summary>SKY130RTL D2SK1 - Introduction to Timing Libraries (.libs)</summary>
+  <summary>Introduction to Timing Libraries (.libs)</summary>
 
   ### Introduction to .lib Files (Parts 1-3)
   - Studied the structure and significance of `.lib` files, which are essential for timing analysis and cell characterization.
@@ -35,7 +35,7 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <details>
-  <summary>SKY130RTL D2SK2 - Hierarchical vs Flat Synthesis</summary>
+  <summary>Hierarchical vs Flat Synthesis</summary>
 
   ### Hierarchical vs Flat Synthesis (Parts 1-2)
   - Understood how hierarchical synthesis allows for modular design, while flat synthesis provides a single-level design view.
@@ -119,7 +119,7 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <details>
-  <summary>SKY130RTL D2SK3 - Various Flop Coding Styles and Optimization</summary>
+  <summary>Various Flop Coding Styles and Optimization</summary>
 
   ### Why Flops and Flop Coding Styles
   - Learned about the importance of flip-flops in digital design and explored different flop coding styles.
