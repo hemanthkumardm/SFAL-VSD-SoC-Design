@@ -1,5 +1,3 @@
- # Day 15 - Good Floorplan vs Bad Floorplan and Introduction to Library Cells
-
 ---
 <details>
   <summary>Chip Floor Planning Considerations</summary>
