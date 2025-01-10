@@ -1,4 +1,3 @@
-# Design Library Cell Using Magic Layout and Ngspice Characterization  
 
 ## Overview  
 This section focuses on designing a custom inverter standard cell using Magic Layout and characterizing its performance with Ngspice simulations. It includes layout exploration, SPICE extraction, post-layout simulations, and addressing Design Rule Check (DRC) issues.  
