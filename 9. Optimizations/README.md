@@ -1,5 +1,3 @@
-# Day 8 - Optimizations
-
 <details>
   <summary><b>DC_D4SK1 - Optimizations Combinational Opt</b></summary>
 
