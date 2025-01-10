@@ -1,6 +1,6 @@
 # DAY16 Labs
 
-### Design Synthesis and Flop Ratio Calculation**
+### Design Synthesis and Flop Ratio Calculation
 
 #### **Tasks Overview:**
 1. Perform synthesis on the `picorv32a` design using the OpenLANE flow and generate the necessary outputs.
