@@ -1,7 +1,5 @@
-# Day 9 - Quality Checks
-
 <details>
-  <summary>DC_D5SK1</summary>
+  <summary>Quality Checks</summary>
   
   - **Lecture - Report Timing**
     **Generating Timing Reports**
