@@ -1,4 +1,3 @@
-## Floorplan and Placement **
 
 ### **Tasks Overview:**
 1. Perform floorplan for the `picorv32a` design using OpenLANE and generate the outputs.
