@@ -59,6 +59,7 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
     ```
     
     #### After synthesis
+    
     <img width="628" alt="Screenshot 2024-10-23 at 12 29 24 PM" src="https://github.com/user-attachments/assets/6927187b-04af-44e8-ba60-48db3aefbd9e">
 		
     **multiple_modules**
@@ -80,14 +81,15 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
     <img width="928" alt="Screenshot 2024-10-23 at 7 46 49 PM" src="https://github.com/user-attachments/assets/c10a87d2-1504-4e6d-b966-3d8853217659">
 		
     **Writing netlists**
+    
     ```bash
     write_verilog -noattr multiple_modules_netlist.v
     ```
+    
     <img width="282" alt="Screenshot 2024-10-23 at 7 48 34 PM" src="https://github.com/user-attachments/assets/eca53284-8f78-467b-b9cf-5be39335b359">
-    <br>
+
     <img width="569" alt="Screenshot 2024-10-23 at 8 27 42 PM" src="https://github.com/user-attachments/assets/81b2a745-0722-4865-b841-2045f82e65db">
 
-    
     <img width="664" alt="Screenshot 2024-10-23 at 8 04 51 PM" src="https://github.com/user-attachments/assets/75400a5a-b918-4703-9a51-98cf8225b0c9"><br>
 
     **Flat netlist**
@@ -100,19 +102,23 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
     <img width="564" alt="Screenshot 2024-10-23 at 8 33 46 PM" src="https://github.com/user-attachments/assets/1e0d0a1c-0a3e-451d-b777-b1eb9b90e672">
     
     **Output**<br>
-    <br><img width="1435" alt="Screenshot 2024-10-23 at 8 34 46 PM" src="https://github.com/user-attachments/assets/72e43ef5-83be-46be-9132-8c6fab7b5882">
+
+    <img width="1435" alt="Screenshot 2024-10-23 at 8 34 46 PM" src="https://github.com/user-attachments/assets/72e43ef5-83be-46be-9132-8c6fab7b5882">
     
     **sub_module.v**
-    <br><img width="292" alt="Screenshot 2024-10-23 at 8 37 08 PM" src="https://github.com/user-attachments/assets/cc57b91e-6dbd-4caa-b86e-22f61ed8aeaf">
+
+    <img width="292" alt="Screenshot 2024-10-23 at 8 37 08 PM" src="https://github.com/user-attachments/assets/cc57b91e-6dbd-4caa-b86e-22f61ed8aeaf">
     
     **Linking to netlist**
-    <br><img width="442" alt="Screenshot 2024-10-23 at 8 37 44 PM" src="https://github.com/user-attachments/assets/22c926f2-f3ee-4d74-b465-8c9efe546d97">
+
+    <img width="442" alt="Screenshot 2024-10-23 at 8 37 44 PM" src="https://github.com/user-attachments/assets/22c926f2-f3ee-4d74-b465-8c9efe546d97">
     
     **Output**
-    <br><img width="742" alt="Screenshot 2024-10-23 at 8 38 20 PM" src="https://github.com/user-attachments/assets/4bbee867-044b-4a88-995a-a620d1b45dec">
+	
+    <img width="742" alt="Screenshot 2024-10-23 at 8 38 20 PM" src="https://github.com/user-attachments/assets/4bbee867-044b-4a88-995a-a620d1b45dec">
     
     - When we have multiple instances of the same module.
-    - To get rid of this redundancy, we flatten the netlist.
+    - To get rid of this redundancy, we `flatten` the netlist.
 		
 </details>
 
@@ -124,10 +130,13 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
   ### Why Flops and Flop Coding Styles
   - Learned about the importance of flip-flops in digital design and explored different flop coding styles.
   - Flops are used to minimize the glitches.
-  - <img width="720" alt="Screenshot 2024-10-23 at 7 27 47 PM" src="https://github.com/user-attachments/assets/c0488023-1a2c-46ae-955d-955815aab11c">
+    
+    <img width="720" alt="Screenshot 2024-10-23 at 7 27 47 PM" src="https://github.com/user-attachments/assets/c0488023-1a2c-46ae-955d-955815aab11c">
+    
   #### Flop Coding Styles
 
   **dff_asyncres.v**
+  
   ```verilog
     module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
     always @ (posedge clk , posedge async_reset)
@@ -139,9 +148,13 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
     end
     endmodule
   ```
+
    **Waveforms**
-![WhatsApp Image 2024-10-23 at 19 01 24](https://github.com/user-attachments/assets/82f4bc94-4b1e-418b-bb9f-6f1e52d45df2)
+   
+	![WhatsApp Image 2024-10-23 at 19 01 24](https://github.com/user-attachments/assets/82f4bc94-4b1e-418b-bb9f-6f1e52d45df2)
+ 
 **dff_syncres.**
+
 ```verilog
 module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
 always @ (posedge clk )
@@ -153,12 +166,15 @@ begin
 end
 endmodule
 ```
+
 **Waveforms**
+
 ![WhatsApp Image 2024-10-23 at 19 37 15](https://github.com/user-attachments/assets/8d5e39c9-977b-4801-bfd5-9397bdf07d3d)
 
-
   ### Lab of Asyncronous Flop Synthesis Simulations 
+  
   **dff_asyncres.v**
+  
   ```verilog
 module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
 always @ (posedge clk , posedge async_reset)
@@ -170,9 +186,11 @@ begin
 end
 endmodule
 ```
+
 <img width="1286" alt="Screenshot 2024-10-24 at 9 25 00 AM" src="https://github.com/user-attachments/assets/880462f3-c69c-4e6b-9ac1-86a9f8e72650">
 
 **dff_async_set.v**
+
 ```verilog
 module dff_async_set ( input clk ,  input async_set , input d , output reg q );
 always @ (posedge clk , posedge async_set)
@@ -184,50 +202,62 @@ begin
 end
 endmodule
 ```
+
 <img width="1285" alt="Screenshot 2024-10-24 at 9 27 24 AM" src="https://github.com/user-attachments/assets/0dfc239e-1007-412b-b14b-72165391f41c">
 
 ### Lab of Syncronous Flop Synthesis Simulations 
+
 **dff_syncres.v**
+
 <img width="314" alt="Screenshot 2024-10-24 at 9 41 40 AM" src="https://github.com/user-attachments/assets/cce3482e-ca65-4e01-aadb-246202de04a3">
 
 **Output**
+
 <img width="855" alt="Screenshot 2024-10-24 at 9 43 51 AM" src="https://github.com/user-attachments/assets/02117e39-8828-45c8-ac16-3bea622eadcf">
 
 **dff_async_set.v**
+
 <img width="361" alt="Screenshot 2024-10-24 at 9 56 23 AM" src="https://github.com/user-attachments/assets/dc3de8fb-3e91-41bc-802a-74827495563d">
 
 **Output**
+
 <img width="923" alt="Screenshot 2024-10-24 at 10 00 45 AM" src="https://github.com/user-attachments/assets/177f96c6-fc1d-4b64-8441-e2a515d90d3d">
 
 **dff_syncres.v**
+
 <img width="306" alt="Screenshot 2024-10-24 at 10 02 33 AM" src="https://github.com/user-attachments/assets/976bd57e-2ae1-4790-b07f-e1f569b52bfe">
 
 **Output**
+
 <img width="889" alt="Screenshot 2024-10-24 at 10 03 58 AM" src="https://github.com/user-attachments/assets/7d6c40b0-9b2b-4123-b818-a83985370f4c">
 
 **Expected Output vs Original Output**
+
 <img width="1320" alt="Screenshot 2024-10-24 at 10 07 50 AM" src="https://github.com/user-attachments/assets/4f62104f-8c44-476b-a51d-7c1855e1ef15">
 
   ### Interesting Optimizations
+  
   - Applied optimizations to the flop designs to reduce area and improve performance.
     
     **Mult_2.v**
+    
     ```verilog
     module mul2 (input [2:0] a, output [3:0] y);
 		assign y = a * 2;
     endmodule
     ```
-    <br>
-    
     ![WhatsApp Image 2024-10-24 at 13 38 58](https://github.com/user-attachments/assets/787894a5-ab87-402e-afe9-67982b078b13)
     
     **Synthesis**<br>
+    
     <img width="325" alt="Screenshot 2024-10-24 at 1 44 02 PM" src="https://github.com/user-attachments/assets/cefce0e2-fd98-4243-ac3a-691f71cf5397">
 
     **Output**<br>
+    
     <img width="741" alt="Screenshot 2024-10-24 at 1 42 52 PM" src="https://github.com/user-attachments/assets/1b83903d-204a-4aa3-a738-6f0f88201afa">
     
     **Netlist**<br>
+    
     ```verilog
     module mul2(a, y);
   		input [2:0] a;
@@ -239,19 +269,21 @@ endmodule
     ```
     
     **Mult_8.v**<br>
+    
     ```verilog
     module mul8 (input [2:0] a, output [5:0] y);
 	assign y = a * 9;
     endmodule
     ```
-    <br>'
     
     ![WhatsApp Image 2024-10-24 at 13 58 25](https://github.com/user-attachments/assets/74e57bd6-70c4-4e60-9c03-a1764dfc7a0c)
 
     **Synthesis**<br>
+    
     <img width="393" alt="Screenshot 2024-10-24 at 1 59 42 PM" src="https://github.com/user-attachments/assets/45b4bdb0-593e-4f76-a0be-1d4f53dab8ca">
 
     **Output**<br>
+    
     <img width="927" alt="Screenshot 2024-10-24 at 2 00 09 PM" src="https://github.com/user-attachments/assets/e72bdaa7-184f-463d-bbd7-5e4aae01ee1a">
     
     **Netlist**<br>
@@ -266,13 +298,6 @@ endmodule
     ```
 
     
-
-    
-
-    
-
-
-
 </details>
 
 
