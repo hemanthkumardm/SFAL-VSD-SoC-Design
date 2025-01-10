@@ -1,4 +1,4 @@
-## Steps to run floorplan using OpenLane
+# FLOORPLANNING
 
 `run_floorplan`
 
