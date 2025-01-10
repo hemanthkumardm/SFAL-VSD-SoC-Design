@@ -1,5 +1,3 @@
-# Day 14 OpenLANE EDA Tool: Simplified Overview
-
 This file provides a basic understanding of the open-source EDA, the RTL to GDSII flow, and the key components used in digital ASIC design with the Sky130 PDK.
 
 ---
