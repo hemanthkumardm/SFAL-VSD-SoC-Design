@@ -1,5 +1,5 @@
 <details>
-  <summary><b>DC_D4SK1 - Optimizations Combinational Opt</b></summary>
+  <summary><b>Optimizations Combinational Opt</b></summary>
 
   **Optimization goals**
       - Cost function based optimizations.
@@ -73,7 +73,7 @@ assign a_1 =
 </details>
 
 <details>
-  <summary><b>DC_D4SK2 - Combinational Optimizations</b></summary>
+  <summary><b>Combinational Optimizations</b></summary>
   
   - Combinational Optimizations
     **opt_check.v**
@@ -145,7 +145,7 @@ assign a_1 =
 </details>
 
 <details>
-  <summary><b>DC_D4SK3 - Special Optimizations</b></summary>
+  <summary><b>Special Optimizations</b></summary>
   
   - Special Optimizations
     
@@ -154,7 +154,7 @@ assign a_1 =
 </details>
 
 <details>
-  <summary><b>DC_D4SK4 - Boundary Optimization</b></summary>
+  <summary><b>Boundary Optimization</b></summary>
   
   - Boundary Optimization
   - Register Retiming
