@@ -1,5 +1,3 @@
-# Day 7 - Advanced Constraints
-
 <details>
   <summary>SDC Part 1 and Part 2</summary>
 
