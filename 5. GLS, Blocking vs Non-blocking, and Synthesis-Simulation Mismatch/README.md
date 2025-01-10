@@ -1,7 +1,5 @@
-# Day 4 - GLS, Blocking vs Non-blocking, and Synthesis-Simulation Mismatch
-
 ## Overview:
-On Day 4, I focused on Gate-Level Simulation (GLS), the differences between blocking and non-blocking statements, and understanding synthesis-simulation mismatches. These concepts are crucial for debugging and improving the accuracy of RTL designs during the synthesis process. Below is the breakdown of the tasks and labs completed today.
+Focused on Gate-Level Simulation (GLS), the differences between blocking and non-blocking statements, and understanding synthesis-simulation mismatches. These concepts are crucial for debugging and improving the accuracy of RTL designs during the synthesis process. Below is the breakdown of the tasks and labs completed today.
 
 <details>
   <summary>GLS, Synthesis-Simulation Mismatch, and Blocking/Non-blocking Statements</summary>
