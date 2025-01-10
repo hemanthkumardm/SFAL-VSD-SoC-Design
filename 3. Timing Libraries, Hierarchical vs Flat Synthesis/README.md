@@ -14,7 +14,9 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
        - `025C`: 77 °F (Temperature)
        - `1v80`: Voltage
      - ![lib filename explanation](https://github.com/user-attachments/assets/8e2fac9d-6ef7-4dce-8e20-e829e6c7bbef)
-       <img width="594" alt="Screenshot 2024-10-23 at 10 48 57 AM" src="https://github.com/user-attachments/assets/b45fc544-f0ea-4148-ae2c-7318dc72fc6f">
+       
+<img width="594" alt="Screenshot 2024-10-23 at 10 48 57 AM" src="https://github.com/user-attachments/assets/b45fc544-f0ea-4148-ae2c-7318dc72fc6f">
+
   - The logic gate `sky130_fd_sc_hd__a2111o_1`:
      - Has 5 inputs (A1, A2, B1, C1, D1), resulting in 2^5 = 32 possible input combinations.
      - Gate function explained:
@@ -24,11 +26,14 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
          - `2111`: indicates the structure:
            - Two inputs (A1, A2) go into an AND gate.
            - The result of the AND gate feeds into the first input of a 4-input OR gate (A1, A2, B1, C1, D1).
+             
      - ![Gate explanation](https://github.com/user-attachments/assets/65f2c6bb-37e8-4b5a-9481-8261973ef198)
+       
      - As the number of gates increases, the area also increases, i.e., a larger cell is employing wider transistors.
      - Wider cells are faster but require larger areas and consume more power.
      - Smaller cells have more delay but require less area and consume less power.
-     - <img width="1392" alt="Screenshot 2024-10-23 at 11 32 28 AM" src="https://github.com/user-attachments/assets/487a0c75-c2db-4eae-9e8a-a0f992110ac2">
+       
+<img width="1392" alt="Screenshot 2024-10-23 at 11 32 28 AM" src="https://github.com/user-attachments/assets/487a0c75-c2db-4eae-9e8a-a0f992110ac2">
 
 </details>
 
@@ -63,21 +68,27 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
     <img width="628" alt="Screenshot 2024-10-23 at 12 29 24 PM" src="https://github.com/user-attachments/assets/6927187b-04af-44e8-ba60-48db3aefbd9e">
 		
     **multiple_modules**
+    
     <img width="263" alt="Screenshot 2024-10-23 at 12 34 11 PM" src="https://github.com/user-attachments/assets/3431a5ca-2378-4106-ae19-3233d59fbff2">
     
     **sub_module1**
+    
     <br><img width="262" alt="Screenshot 2024-10-23 at 12 34 35 PM" src="https://github.com/user-attachments/assets/1a840c8c-9809-4337-bd3d-c0eb55fcb740">
     
     **sub_module2**
+    
     <br><img width="260" alt="Screenshot 2024-10-23 at 12 35 04 PM" src="https://github.com/user-attachments/assets/daf0dcde-46e2-43f7-9d1a-7cd56d40ed23">
     
     **design hierarchy**
+    
     <br><img width="254" alt="Screenshot 2024-10-23 at 12 35 32 PM" src="https://github.com/user-attachments/assets/60bc031d-7865-411f-836d-017b0657f710">
     
     **Linking to liberty file**
+    
     <img width="557" alt="Screenshot 2024-10-23 at 7 44 43 PM" src="https://github.com/user-attachments/assets/fda168af-7074-43f5-885a-dc52c7ab1b17">
     
     **Output**
+    
     <img width="928" alt="Screenshot 2024-10-23 at 7 46 49 PM" src="https://github.com/user-attachments/assets/c10a87d2-1504-4e6d-b966-3d8853217659">
 		
     **Writing netlists**
@@ -96,12 +107,12 @@ On Day 2, I focused on understanding timing libraries (`.libs`), the differences
     ```bash
     flatten
     ```
-    <br>
+
     <img width="352" alt="Screenshot 2024-10-23 at 8 31 00 PM" src="https://github.com/user-attachments/assets/6c291d00-46f5-4ec5-93ef-0af30ecf619d">
 		
     <img width="564" alt="Screenshot 2024-10-23 at 8 33 46 PM" src="https://github.com/user-attachments/assets/1e0d0a1c-0a3e-451d-b777-b1eb9b90e672">
     
-    **Output**<br>
+    **Output**
 
     <img width="1435" alt="Screenshot 2024-10-23 at 8 34 46 PM" src="https://github.com/user-attachments/assets/72e43ef5-83be-46be-9132-8c6fab7b5882">
     
