@@ -1,5 +1,3 @@
-# CMOS Inverter Design and Characterization Labs
-
 ## Design Library Cell using Magic Layout and ngspice Characterization
 
 <details>
