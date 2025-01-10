@@ -1,5 +1,3 @@
-# Day 5 - Introduction to Logic Synthesis
-
 ## PART 1
 <details>
   <summary>SYNTHESIS</summary>
