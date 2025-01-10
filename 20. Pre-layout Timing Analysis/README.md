@@ -1,4 +1,5 @@
-![Screenshot from 2024-11-26 13-43-51](https://github.com/user-attachments/assets/a1596dd9-d938-4746-a844-63bd8f8c9007)# Pre-layout Timing Analysis and Importance of Good Clock Tree
+
+# Pre-layout Timing Analysis and Importance of Good Clock Tree
 
 This section outlines the process of performing pre-layout timing analysis and emphasizing the importance of a good clock tree in VLSI design. It covers the necessary steps to ensure that the design is ready for further stages in the OpenLane flow, including the integration of custom-designed cells and timing optimization.
 
