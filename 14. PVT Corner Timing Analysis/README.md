@@ -1,5 +1,3 @@
-# VSDBabySoC: PVT Corner Timing Analysis and Synthesis with Constraints
-
 ## Overview
 
 This project involves performing synthesis and timing analysis on the VSDBabySoC design with Synopsys DC using SDC constraints across multiple PVT (Process, Voltage, Temperature) corners. The goal is to validate the design across various operating conditions to ensure it meets timing requirements for robust operation.
